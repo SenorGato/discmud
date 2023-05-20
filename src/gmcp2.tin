@@ -1,0 +1,183 @@
+#EVENT {SESSION CONNECTED}
+{
+    #variable TELNET[IAC]  \xFF;
+    #variable TELNET[DONT] \xFE;
+    #variable TELNET[DO]   \xFD;
+    #variable TELNET[WONT] \xFC;
+    #variable TELNET[WILL] \xFB;
+    #variable TELNET[SB]   \xFA;
+    #variable TELNET[SE]   \xF0;
+    #variable TELNET[GMCP] \xC9;
+    #nop Turn telnet debug on to see telnet debugging information.;
+    #config {debug telnet} {on};
+    #split 16 1;
+    #map create 100000;
+    #map goto 1;
+    #map flag vtmap;
+    #map flag static;
+    #map flag nofollow;
+    #map read gmcp.map
+}
+
+#VARIABLE {DIR_NAME}
+{
+    {d} {D}
+    {down} {D}
+    {e} {E}
+    {east} {E}
+    {n} {N}
+    {north} {N}
+    {s} {S}
+    {south} {S}
+    {u} {U}
+    {up} {U}
+    {w} {W}
+    {west} {W}
+}
+#FUNCTION {colscale}
+{
+    #switch {10 * %1 / %2}
+    {
+        #case {0}
+        {
+            #return {<faa>}
+        };
+        #case {1}
+        {
+            #return {<fba>}
+        };
+        #case {2}
+        {
+            #return {<fca>}
+        };
+        #case {3}
+        {
+            #return {<fda>}
+        };
+        #case {4}
+        {
+            #return {<fea>}
+        };
+        #case {5}
+        {
+            #return {<ffa>}
+        };
+        #case {6}
+        {
+            #return {<efa>}
+        };
+        #case {7}
+        {
+            #return {<dfa>}
+        };
+        #case {8}
+        {
+            #return {<cfa>}
+        };
+        #case {9}
+        {
+            #return {<bfa>}
+        };
+        #default
+        {
+            #return {<afa>}
+        }
+    }
+}
+
+#EVENT {IAC WILL GMCP}
+{
+    #info SYSTEM save;
+    #send {$TELNET[IAC]$TELNET[DO]$TELNET[GMCP]\};
+    #send {$TELNET[IAC]$TELNET[SB]$TELNET[GMCP] core.hello { "client": "$info[SYSTEM][CLIENT_NAME]", "version": "$info[SYSTEM][CLIENT_VERSION]" } $TELNET[IAC]$TELNET[SE]\};
+    #send {$TELNET[IAC]$TELNET[SB]$TELNET[GMCP] core.supports.set [ "room 1", "room.info 1", "char 1", "char.status 1" ] $TELNET[IAC]$TELNET[SE]\}
+}
+
+#EVENT {IAC SB GMCP char.status IAC SE}
+{
+    #variable gmcp[char][status] {%0}
+}
+
+#EVENT {IAC SB GMCP char.base IAC SE}
+{
+    #variable gmcp[char][base] {%0}
+}
+
+#EVENT {IAC SB GMCP char.vitals IAC SE}
+{
+    #variable gmcp[char][vitals] {%0}
+}
+
+#EVENT {IAC SB GMCP char.maxstats IAC SE}
+{
+    #variable gmcp[char][maxstats] {%0}
+}
+
+#EVENT {IAC SB GMCP char.worth IAC SE}
+{
+    #variable gmcp[char][worth] {%0}
+}
+
+#TICKER {prompt_update}
+{
+    #if {&{gmcp[char][]} != 5}
+    {
+        #return
+    };
+    #format {prompt} {};
+    #format {prompt} {$prompt<038> Hp: @colscale{$gmcp[char][vitals][hp];$gmcp[char][maxstats][maxhp]}%+4s<238>/<138>%-4s } {$gmcp[char][vitals][hp]} {$gmcp[char][maxstats][maxhp]};
+    #format {prompt} {$prompt<238> Mn: @colscale{$gmcp[char][vitals][mana];$gmcp[char][maxstats][maxmana]}%+3s<238>/<138>%-3s } {$gmcp[char][vitals][mana]} {$gmcp[char][maxstats][maxmana]};
+    #format {prompt} {$prompt<238> Mv: @colscale{$gmcp[char][vitals][moves];$gmcp[char][maxstats][maxmoves]}%+3s<238>/<138>%-3s } {$gmcp[char][vitals][moves]} {$gmcp[char][maxstats][maxmoves]};
+    #format {prompt} {$prompt<238> Xp: @colscale{$gmcp[char][status][tnl];1000}%-3m } {100 * $gmcp[char][status][tnl] / 1000};
+    #format {prompt} {$prompt<238> Gd: <128>%-8s } {$gmcp[char][worth][gold]};
+    #variable exits {};
+    #foreach {n;north;e;east;s;south;w;west;u;up;d;down} {exit}
+    {
+        #if {&gmcp[room][info][exits][$exit] == 0}
+        {
+            #continue
+        };
+        #variable {exits} {$exits<128>$DIR_NAME[$exit]}
+    };
+    #format {prompt} {$prompt <238>Ex: %-6s} {$exits   <088>};
+    #line ignore #showme {$prompt} {-2}
+}
+{1}
+
+#EVENT {IAC SB GMCP room.info IAC SE}
+{
+    #variable gmcp[room][info] {%0};
+    #if {$gmcp[room][info][num] == -1}
+    {
+        #return
+    };
+    #map goto {$gmcp[room][info][num]} {dig};
+    #map get roomarea {result};
+    #if {"$result" == ""}
+    {
+        #map set roomarea $gmcp[room][info][zone];
+        #map set roomnote $gmcp[room][info][environment];
+        #map set roomname $gmcp[room][info][name];
+        #map set roomterr $gmcp[room][info][terrain];
+        #map set roominfo $gmcp[room][info][details];
+        #map set roomcolor <178>
+    };
+    #foreach {*gmcp[room][info][exits][]} {exit}
+    {
+        #map get {roomexit} {result};
+        #if {&result[$exit] == 0}
+        {
+            #map get {roomvnum} {result} {$gmcp[room][info][exits][$exit]};
+            #map dig {$exit} {$gmcp[room][info][exits][$exit]};
+            #if {$result == 0}
+            {
+                #map set {roomcolor} {<118>} {$gmcp[room][info][exits][$exit]}
+            }
+        }
+    }
+}
+
+#EVENT {SESSION DISCONNECTED}
+{
+    #map write gmcp.map
+}

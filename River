@@ -1,0 +1,37 @@
+cd ~/bins/discmud
+
+if [[ ! $(tmux ls -F '#S') =~ discworld ]]; then
+    # Flag that we've just created a session
+    DISC_SESSION_CREATE=1
+
+    # Zero out log files to keep size down
+    # rm logs/minimap.log && touch logs/minimap.log
+    # rm logs/mapdoortext.log && touch logs/mapdoortext.log
+    # rm logs/chat.log && touch logs/chat.log
+    
+    # Start a new tmux session named "discworld"
+    tmux new-session -d -A -D -s discworld
+fi
+
+# If we're in TMUX, or we just created a new session, make a layout
+if [ -n "$TMUX" ] || [ "$DISC_SESSION_CREATE" = "1" ]; then
+
+    # Kill any existing panes but the one we're "starting" in if in tmux already
+    if [ -n "$TMUX" ]; then
+        tmux kill-pane -a -t discworld:0.0
+    fi
+
+    tmux send-keys "tmux split-window -h -l 28" C-m    
+    tmux send-keys "tmux split-window -v -l 1" C-m
+    tmux send-keys "tmux select-pane -t discworld:0.0" C-m
+    tmux send-keys "tmux split-window -h -l 101" C-m    
+    tmux send-keys "tmux select-pane -t discworld:0.0" C-m
+    tmux send-keys "tmux split-window -v -l 1" C-m
+    tmux send-keys "tmux select-pane -t discworld:0.2" C-m
+fi
+
+if [ -z "$TMUX" ]; then
+    echo "Not already in TMUX, so let's attach"
+    # If we aren't already inside of TMUX, then attach to our session
+    tmux -2 attach-session -t discworld -d
+fi

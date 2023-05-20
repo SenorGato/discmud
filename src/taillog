@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#tail -f ../logs/prompt.log
+tail -f ../logs/prompt.log | xargs -I {} sh -c 'echo {}' > file.oshit
+

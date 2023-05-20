@@ -114,3 +114,163 @@
 10:50am [0m[1;33mJuppie stylishly asks you: there is a religious instructor here in oc, isnt it?[39;49m[0m[39;49m[0m[0m
 10:50am [0mYou tell Juppie: Don't think so, not sure though[39;49m[0m[0m
 11:18am [0m[1;33mJuppie stylishly tells you: sorry had to afk  abrubtly[39;49m[0m[39;49m[0m[0m
+11:59pm [0m[1;33mMethane tells you: hi hi[39;49m[0m[39;49m[0m[0m
+12:05am [0mYou ask Methane: How do I learn new rituals from the instructor, assuming I have the required levels?[39;49m[0m[0m
+12:05am [0m[1;33mMethane tells you: leave east from the instructor, and then go back west. if they have anything to teach you, it'll say so.[39;49m[0m[39;49m[0m[0m
+12:06am [0m[1;33mMethane tells you: took me a bit to figure that out myself[39;49m[0m[39;49m[0m[0m
+12:06am [0mYou tell Methane: >.> :D  Thank you[39;49m[0m[0m
+12:06am [0m[1;33mMethane asks you: welcome ... what'd you learn?[39;49m[0m[39;49m[0m[0m
+12:06am [0mYou tell Methane: See consecration, I haven't played in months, and I forget what my charms are remember placed too...[39;49m[0m[0m
+12:07am [0m[1;33mMethane tells you: charms ... i still can't use 'em cos they're too small[39;49m[0m[39;49m[0m[0m
+03:29am [1m[34m[speedwalk] Generating speedwalk from current location to [32mentrance to the Mended Drum[1m[34m, [38;5;130mAM Buildings[1m[34m...
+04:09am [0mYou ask Chara: Do you have a version of your working configs in a repo somwhere, I could look at?[39;49m[0m[0m
+04:10am [0m[1;33mChara tells you: one sec, I'll set up a gist for it[39;49m[0m[39;49m[0m[0m
+04:11am [0m[1;33mChara tells you: https://gist.github.com/compmstr/b4314f7fc61daef177efc73b9ce1f0eb[39;49m[0m[39;49m[0m[0m
+04:12am [0m[1;33mChara tells you: That's the gmcp section of my config[39;49m[0m[39;49m[0m[0m
+04:12am [0m[1;33mChara tells you: the 'debug' command is nice, since it will print out each gmcp update so you can see what's in it[39;49m[0m[39;49m[0m[0m
+04:13am [0mYou ask Chara: you just run debug on in the input line?[39;49m[0m[0m
+04:13am [0m[1;33mChara tells you: yep[39;49m[0m[39;49m[0m[0m
+04:13am [0mYou exclaim to Chara: relogging to test it.  Thank you![39;49m[0m[0m
+04:15am [0mYou tell Chara: I replaced it, but still the same issue.[39;49m[0m[0m
+04:16am [0m[1;33mChara tells you: hmm, I'm trying to see if there are any options in the mud for gmcp...[39;49m[0m[39;49m[0m[0m
+04:16am [0mYou tell Chara: Here is what is happening: https://termbin.com/v9nwe[39;49m[0m[0m
+04:17am [0m[1;33mChara tells you: hmm, it looks like it's trying to send in that garbled text instead of your username[39;49m[0m[39;49m[0m[0m
+04:18am [0mYou tell Chara: Its almost as if there is a missing carriage return, like it doesn't "send" the data, it just prints it, and then[39;49m[0m[0m
+04:19am [0m[1;33mChara asks you: do you have any other IAC events in your config that might still be running?[39;49m[0m[39;49m[0m[0m
+04:19am [0mYou tell Chara: I copied your gmcp over and backed the default up, so I shouldn't have.  I'm running the base default config from[39;49m[0m[0m
+04:20am [0m[1;33mChara tells you: Yeah, I just picked out the GMCP specific section of that config[39;49m[0m[39;49m[0m[0m
+04:21am [0mYou tell Chara: I'm gonna try and connect on my laptop, and see what happens, to see if its system specific or not.[39;49m[0m[0m
+04:21am [0m[1;33mChara asks you: what terminal are you using?[39;49m[0m[39;49m[0m[0m
+04:21am [0mYou tell Chara: kitty[39;49m[0m[0m
+04:21am [0m[1;33mChara tells you: I'm on rxvt (mainly for keypad support)[39;49m[0m[39;49m[0m[0m
+04:25am [0mYou tell Chara: Well I don't have sqlite and all the depenecies on the laptop, but it didn't spit out the garble when I connected.[39;49m[0m[0m
+04:25am [0mYou tell Chara: I'm running kitty on my laptop too, so maybe its a system issue.*shrug*[39;49m[0m[0m
+04:25am [0m[1;33mChara tells you: Looks like it might be, that's always fun to track down.[39;49m[0m[39;49m[0m[0m
+04:27am [0mYou tell Chara: Or just run it on an AWS EC2 free shard.[39;49m[0m[0m
+04:27am [0mYou tell Chara: I might try that as a work around, I don't mind SSHing to the server if it means it all works.[39;49m[0m[0m
+04:27am [0m[1;33mChara tells you: Hmm, that's definitely an idea.[39;49m[0m[39;49m[0m[0m
+04:28am [0m[1;33mChara tells you: I'm so used to moving with the keypad that I'd have to find a setup that works with that, haha.[39;49m[0m[39;49m[0m[0m
+09:38pm [0m[1;33mStamen den Garran tells you: Have a read of that link and ask me questions about rods :)[39;49m[0m[39;49m[0m[0m
+09:38pm [0mYou tell Stamen den Garran: I'm just confused, the process isn't very clear.  Lets say I want a pishe ressurection rod as a sek priest[39;49m[0m[0m
+09:39pm [0mYou ask Stamen den Garran: That would mean I would need to consecrate a rod to Sek, give it to a pishe, and they would charge it with ressurection?[39;49m[0m[0m
+09:39pm [0mYou ask Stamen den Garran: or does it need to be consecrated to pishe first, and filled, then refilled again after I reconsecrate it to sek?[39;49m[0m[0m
+09:40pm [0m[1;33mStamen den Garran tells you: Almost. The rod would be consecrated to Pishe, then Res bestowed into it. Then, it would need ot be fully charged by a Pishite priest (followers can't charge them). Once fully charged to 15/15 ("imprinted"), the Sekkite takes the rod and consecrates it to Sek. That resets the rit charge level to 1 ("inbued, barely visible light"), then it needs to be charged by a sekkite priest to at least 6/15 ("impressed"). At impressed level, you can perform the rit from it without the rit leaving the rod[39;49m[0m[39;49m[0m[0m
+09:41pm [0mYou ask Stamen den Garran: How do I impress the rod, if I can't cast the ritual?[39;49m[0m[0m
+09:42pm [0m[1;33mStamen den Garran tells you: Hold it and pray, it's the prayers that charge it up[39;49m[0m[39;49m[0m[0m
+09:42pm [0mYou ask Stamen den Garran: So I can just buy any rod and reconsecrate it to myself, assuming its imprinted?[39;49m[0m[0m
+09:43pm [0m[37m[39;49m[0m[1;33mStamen den Garran tells you: Yep, you can! Just be sure to charge it back up after the reconsecration[39;49m[0m[39;49m[0m[0m
+09:43pm [0mYou tell Stamen den Garran: Thank you!  So much archaic knowledge lurking around.[39;49m[0m[0m
+10:22pm [0mYou ask Stamen den Garran: Could I trouble you for a couple of rides?  I need to imprint a few places for divine hand.  BP, DJB, and OC?[39;49m[0m[0m
+10:25pm [0mYou ask Latro: Can I trouble you for a few taxi rides?[39;49m[0m[0m
+10:25pm [0m[1;33mLatro asks you: Sure.  Where are you?[39;49m[0m[39;49m[0m[0m
+10:26pm [0mYou tell Latro: At the sek temple in AM, but I can meet you at the drum[39;49m[0m[0m
+10:26pm [0m[1;33mStamen den Garran asks you: For sure. Where can I meet ya?[39;49m[0m[39;49m[0m[0m
+10:26pm [0mYou tell Stamen den Garran: I think latro is getting me.[39;49m[0m[0m
+10:27pm [0m[39;49m[0m[1;33mStamen den Garran exclaims to you: Kk![39;49m[0m[39;49m[0m[0m
+10:27pm [0m[1;33mLatro asks you: Where are we off to?[39;49m[0m[39;49m[0m[0m
+10:27pm [0mYou tell Latro: I need to go to BP, OC, and DJB.[39;49m[0m[0m
+10:28pm [0m[1;33mLatro asks you: Anywhere in particular in BP?[39;49m[0m[39;49m[0m[0m
+10:28pm [0m[1;33mLatro tells you: It's a big place.[39;49m[0m[39;49m[0m[0m
+10:28pm [0mYou tell Latro: Whatever is convient, I can reimprint later, don't wanna take up too much of your time.[39;49m[0m[0m
+10:29pm [0mYou exclaim to Latro: Ready for the next stop![39;49m[0m[0m
+10:30pm [0mYou exclaim to Latro: Onward![39;49m[0m[0m
+10:30pm [0mYou tell Latro: Thanks so much!  Nothing like being self sufficent now.:D[39;49m[0m[0m
+10:31pm [0m[1;33mLatro exclaims to you: Hehe, good luck![39;49m[0m[39;49m[0m[0m
+10:32pm [0m[36mThe rickshaw driver asks you: Why walk, when you can be carried in style?[39;49m[0m[39;49m[0m[0m
+11:08pm [0m[36mThe rickshaw driver asks you: Why walk, when you can be carried in style?[39;49m[0m[39;49m[0m[0m
+02:33am [0mYou ask Yabai Yatsu: Is there a trick other than full clearing to reset the dungeon?[39;49m[0m[0m
+02:49am [0m[1;33mYabai Yatsu tells you: I honestly don't know how it works, I assume it just resets on some sort of a timer. I don't think it's necessary to fully clear it at least[39;49m[0m[39;49m[0m[0m
+04:09am [0m[1;33mRiZinSun asks you: you leave a cane on the floor in there?[39;49m[0m[39;49m[0m[0m
+04:10am [0mYou tell RiZinSun: No, it was there when I went in.[39;49m[0m[0m
+10:13am [0m[39;49m[0m[1;33mJaceth exclaims to you: all done![39;49m[0m[39;49m[0m[0m
+11:44pm [0m[37m[39;49m[0m[1;33mStamen den Garran tells you: Based on https://dwwiki.mooo.com/wiki/Custom_crystal_jewellery, I would say yes. You can see if something is alive, even if it's not scryable which is super cool[39;49m[0m[39;49m[0m[0m
+12:07am [0m[ ] pick every lock I can[0m
+12:07am [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:07am [0m[x] kneel before Sandelfon when I pray[0m
+12:07am [0m[ ] stop dying so much [0m
+12:09am [0mYou ask Riverphoenix: Are you avaliable for some training in a bit?[39;49m[0m[0m
+12:16am [0m[ ] pick every lock I can[0m
+12:16am [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:16am [0m[x] kneel before Sandelfon when I pray[0m
+12:16am [0m[ ] stop dying so much [0m
+12:24am [0m[ ] pick every lock I can[0m
+12:24am [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:24am [0m[x] kneel before Sandelfon when I pray[0m
+12:24am [0m[ ] stop dying so much [0m
+12:26am [0m[ ] pick every lock I can[0m
+12:26am [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:26am [0m[x] kneel before Sandelfon when I pray[0m
+12:26am [0m[ ] stop dying so much [0m
+12:36am [0m[ ] pick every lock I can[0m
+12:36am [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:36am [0m[x] kneel before Sandelfon when I pray[0m
+12:36am [0m[ ] stop dying so much [0m
+12:43am [0m[ ] pick every lock I can[0m
+12:43am [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:43am [0m[x] kneel before Sandelfon when I pray[0m
+12:43am [0m[ ] stop dying so much [0m
+12:48am [0m[ ] pick every lock I can[0m
+12:48am [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:48am [0m[x] kneel before Sandelfon when I pray[0m
+12:48am [0m[ ] stop dying so much [0m
+01:00am [0m[ ] pick every lock I can[0m
+01:00am [0m[x] cast Crondor's Marvellous Sequestration[0m
+01:00am [0m[x] kneel before Sandelfon when I pray[0m
+01:00am [0m[ ] stop dying so much [0m
+01:58am [0m[1;33mStamen den Garran tells you: Your 'tactics' setting will be a factor in all money-gathering effortd; 300 in things is great, but don't forget your defence. At those levels, OC is easy money. Sto is really good money but a bit tougher (so, better xp). You could also do well in AM or Djeli, assuming you pick the right targets[39;49m[0m[39;49m[0m[0m
+01:59am [0mYou tell Stamen den Garran: I'm in DJB atm.[39;49m[0m[0m
+01:59am [0mYou ask Stamen den Garran: Should I just loot jewelery, the sabres and stuff are worth money too right?[39;49m[0m[0m
+02:00am [0m[1;33mStamen den Garran tells you: Yep! Jewellery. bags (minus string bags and small satchels-- do get the contents), coins, and anything silk[39;49m[0m[39;49m[0m[0m
+02:01am [0mYou ask Stamen den Garran: Where do I sell it?[39;49m[0m[0m
+02:01am [0m[1;33mStamen den Garran tells you: Personally, I fence everything[39;49m[0m[39;49m[0m[0m
+02:01am [0mYou ask Stamen den Garran: the fences are all independent right?  Is there a single place I can just dump it all?[39;49m[0m[0m
+02:03am [0m[37m[39;49m[0m[1;33mStamen den Garran tells you: Hmmmm, I guess I don't know what you mean. Any fence will buy anything from you, but some fences give a bonus for items that they specialize in[39;49m[0m[39;49m[0m[0m
+02:23am [0m[36mRonnie 'Cheese It' Boggis asks you: I am a sinner!  Could you please pray for my soul?[39;49m[0m[39;49m[0m[0m
+11:17am [0m[36mRonnie 'Cheese It' Boggis asks you: I am a sinner!  Could you please pray for my soul?[39;49m[0m[39;49m[0m[0m
+12:05pm [0m[ ] pick every lock I can[0m
+12:05pm [0m[x] cast Crondor's Marvellous Sequestration[0m
+12:05pm [0m[x] kneel before Sandelfon when I pray[0m
+12:05pm [0m[ ] stop dying so much [0m
+12:07pm [0m[36mRonnie 'Cheese It' Boggis asks you: I am a sinner!  Could you please[39;49m[0m[0m
+01:55pm [0m[ ] pick every lock I can[0m
+01:55pm [0m[x] cast Crondor's Marvellous Sequestration[0m
+01:55pm [0m[x] kneel before Sandelfon when I pray[0m
+01:55pm [0m[ ] stop dying so much [0m
+02:04pm [0m[36mRonnie 'Cheese It' Boggis asks you: I am a sinner!  Could you please pray for my soul?[39;49m[0m[39;49m[0m[0m
+02:36pm [0mYou ask Nuala O'Lalah: Hey can you do some teaching for me?[39;49m[0m[0m
+02:36pm [0m[37m[39;49m[0m[1;33mNuala O'Lalah asks you: of course! Where shall I meet you?[39;49m[0m[39;49m[0m[0m
+02:37pm [0mYou tell Nuala O'Lalah: Does the drum work for you?  I can be right there.[39;49m[0m[0m
+02:37pm [0m[37m[39;49m[0m[1;33mNuala O'Lalah exclaims to you: I'll be there in less than a min![39;49m[0m[39;49m[0m[0m
+02:38pm [0mYou tell Nuala O'Lalah: Now I have to figure this out again.. >.>[39;49m[0m[0m
+02:38pm [0m[1;33mNuala O'Lalah tells you: take your time :)[39;49m[0m[39;49m[0m[0m
+02:41pm [0mYou tell Nuala O'Lalah: Now I get my new fancy Kodachi.[39;49m[0m[0m
+02:42pm [0mYou exclaim to Nuala O'Lalah: Thanks so much![39;49m[0m[0m
+02:42pm [0m[1;33mNuala O'Lalah exclaims to you: thank you for learning from me![39;49m[0m[39;49m[0m[0m
+02:45pm [0mYou tell Nuala O'Lalah: Does people.trading.valueing actually really pay off?  I don't see any data on it on the wiki.[39;49m[0m[0m
+02:46pm [0m[1;33mNuala O'Lalah exclaims to you: I find I get a lot more from the fences with a high level. It does TM very well once you get the command![39;49m[0m[39;49m[0m[0m
+03:30pm [0mYou ask Emily von Schaf: Would you mind teaching me a few commands?[39;49m[0m[0m
+03:30pm [0m[1;33mEmily von Schaf asks you: sure where are you?[39;49m[0m[39;49m[0m[0m
+03:31pm [0mYou tell Emily von Schaf: At the drum.[39;49m[0m[0m
+03:32pm [0m[1;33mEmily von Schaf tells you: you had ordeith right next to you. :P[39;49m[0m[39;49m[0m[0m
+03:32pm [0mYou tell Emily von Schaf: I just ran here.[39;49m[0m[0m
+03:33pm [0mYou tell Emily von Schaf: How do command learnings work?  I tried learn hide from emily.[39;49m[0m[0m
+03:33pm [0m[1;33mEmily von Schaf tells you: teach me hide from emily[39;49m[0m[39;49m[0m[0m
+03:33pm [0m[1;33mEmily von Schaf tells you: and then - learn hide from emily[39;49m[0m[39;49m[0m[0m
+03:35pm [0mYou exclaim to Emily von Schaf: thank you![39;49m[0m[0m
+03:35pm [0m[1;33mEmily von Schaf tells you: anytime[39;49m[0m[39;49m[0m[0m
+03:35pm [0mYou tell Emily von Schaf: I should have palmed it to you....[39;49m[0m[0m
+03:36pm [0m[1;33mEmily von Schaf tells you: slipped[39;49m[0m[39;49m[0m[0m
+03:36pm [0m[1;33mEmily von Schaf tells you: palm is for picking up[39;49m[0m[39;49m[0m[0m
+03:37pm [0m[1;33mEmily von Schaf tells you: and i would still see the palm though others in the room might not. plant to put something on someone without their noticing. but pk interaction so you can only do it with npcs and pks[39;49m[0m[39;49m[0m[0m
+04:30pm [0mYou tell Kukuri: Can you rez me?:([39;49m[0m[0m
+04:30pm [0m[1;33mKukuri tells you: Please state the location of your medical emergency.[39;49m[0m[39;49m[0m[0m
+04:30pm [0mYou tell Kukuri: DJB square, southwest side.[39;49m[0m[0m
+04:30pm [0m[1;33mKukuri tells you: Thank you, on my way[39;49m[0m[39;49m[0m[0m
+04:31pm [0m[1;33mKukuri tells you: One moment, need to recharge GPs.[39;49m[0m[39;49m[0m[0m
+04:35pm [0mYou tell Kukuri: Thank you!  Lets hope that doesn't happen again.[39;49m[0m[0m
+04:58pm [0m[36mRonnie 'Cheese It' Boggis asks you: I am a sinner!  Could you please pray for my soul?[39;49m[0m[39;49m[0m[0m
+05:13pm [0m[36mRonnie 'Cheese It' Boggis asks you: I am a sinner!  Could you please pray for my soul?[39;49m[0m[39;49m[0m[0m
+12:04am [0m[ ] guildmax ma.sp.defensive & offensive[0m
+12:04am [0m[ ] 250 levels in all primaries[0m
+12:04am [0m[ ] 300 bonus in ma.me.ph.healing for GRG [0m
+{alignment}{quite evil}{burden}{0}{gp}{279}{hp}{1342}{maxgp}{279}{maxhp}{1342}{xp}{1073906} {alignment}{quite evil}{burden}{10}{gp}{279}{hp}{1342}{maxgp}{279}{maxhp}{1342}{xp}{1073927} {alignment}{quite evil}{burden}{10}{gp}{279}{hp}{1342}{maxgp}{279}{maxhp}{1342}{xp}{1073930} {alignment}{quite evil}{burden}{10}{gp}{279}{hp}{1342}{maxgp}{279}{maxhp}{1342}{xp}{1073975} {alignment}{quite evil}{burden}{10}{gp}{279}{hp}{1342}{maxgp}{279}{maxhp}{1342}{xp}{1073978} {alignment}{quite evil}{burden}{10}{gp}{279}{hp}{1342}{maxgp}{279}{maxhp}{1342}{xp}{1073990} 

@@ -1,5 +1,18 @@
 #NOP == Prompt Update Function ==
 #nop colors
+
+
+#class var open
+#CLASS {var} HAS BEEN OPENED.
+#var x $GMCP[vitals]
+#OK. VARIABLE {x} HAS BEEN SET TO {y}.
+#class var close
+#CLASS {var} HAS BEEN CLOSED.
+#class var write test2.tin
+#CLASS {var} HAS BEEN WRITTEN TO FILE.
+#sys cat test2.tin
+#OK: EXECUTING 'cat test.tin'
+
 #function {tpa_col}
 {
         #if {"%0" == "invisible"};

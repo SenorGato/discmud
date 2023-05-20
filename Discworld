@@ -1,4 +1,4 @@
-cd ~/bins/discworld-tintin
+cd ~/bins/discmud
 
 # No existing discworld session? Then create one
 if [[ ! $(tmux ls -F '#S') =~ discworld ]]; then
