@@ -39,7 +39,7 @@
     #IF {"$debug" == "1"} { #SHOWME %1 };
     #VAR GMCP[oldvitals] {$GMCP[vitals]};
     #VAR GMCP[vitals] {%0};
-    #LINE {log} {$prompt_file} {$GMCP[vitals] \}
+    #LINE {log} {$prompt_file} {$GMCP[vitals] }
 
     #math {hploss} {$GMCP[vitals][hp] - $GMCP[oldvitals][hp]};
     #if {$hploss < -150} {
