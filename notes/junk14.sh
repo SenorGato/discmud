@@ -30,7 +30,7 @@ tail -f ./logs/prompt.log | while IFS= read -r line; do
     echo "xp=$xp"
 
     # Append the new line to "left_prompt.log"
-    printf "Burden:%d GP:%d HP:%d\n" "$burden" "$gp" "$hp" >> left_prompt.log
+    printf "  Burden:%d GP:%d HP:%d\n" "$burden" "$gp" "$hp" > left_prompt.log
 
     # Write the last key-value pair to "right_prompt.log"
     printf "XP:%d\n" "$xp" > right_prompt.log
