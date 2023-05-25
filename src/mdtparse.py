@@ -75,7 +75,7 @@ class MapDoorText:
         self.custom_matches = []
 
         # Load the JSON configuration file
-        with open('mdtconfig.json', 'r') as config_file:
+        with open('/home/senoraraton/bins/discmud/mdtconfig.json', 'r') as config_file:
             config = json.load(config_file)
 
         # Strip comments from custom matches

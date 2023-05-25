@@ -42,30 +42,36 @@
 
 #FORMAT {start_time} {%T};
 
-#ALIAS {lewt} {get coins from corpse; get rings from corpse; get necklaces from corpse; get silk robe from corpse; pm; put robe in pack; put rings in pack; put necklaces in pack; }
-#ALIAS {blewt} {}
-
+#ALIAS {lewt} {get coins from corpse; get rings from corpse; get necklaces from corpse; get silk robes from corpse; pm; put unkept robes in pack; put unkept rings in pack; put unkept necklaces in pack; }
+#ALIAS {lewt2} {get coins from corpses; get rings from corpses; get necklaces from corpses; get silk robes from corpses; pm; put unkept robes in pack; put unkept rings in pack; put unkept necklaces in pack; }
+#ALIAS {dump} {get 10 unkept rings from pack; fence 10 unkept rings to jones; say yes; get 10 unkep necklaces from pack; fence 10 necklaces to jones; say yes; get 10 robes from pack; fence 10 robes to jones; say yes;pm;}
 #ALIAS {gm} {get money from pack};
 #ALIAS {pm} {put money in pack};
 #ALIAS {ha} {health all;};
-#ALIAS {bca} {bury corpses;l;}
+#ALIAS {bca} {lewt2; bury corpses;}
 #ALIAS {bc} {lewt; bury corpse;}
 #ALIAS {wc} {lewt; ensumpf corpse;}
 #ALIAS {lic} {look in corpse;}
-#ALIAS {con} {con all;};
-#ALIAS {rm} {speak morporkian; get yellow book from pack; open book; read book; turn page in book; read book; turn page in book; read book; close book; put yellow book in pack;};
-#ALIAS {gtr} {speak morporkian; get yellow book from pack; open book to page 1; read book; turn page in book; read book; turn page in book; read book; close book; put book in pack; speak agatean; gto;};
+#ALIAS {con} {consider all;};
+#ALIAS {rm} {speak morporkian; get dictionary from dress; open dictionary; read dictionary; turn page in dictionary; read dictionary; turn page in dictionary; read dictionary; close dictionary; put dictionary in dress;};
 #ALIAS {hsl} {perform cure light wounds on me;};
 #ALIAS {hsm} {perform cure medium wounds on me;};
 #ALIAS {mshield} {get small shield from pack; perform major shield on me; put small shield in pack};
 #ALIAS {lom} {perform light on me;};
-#ALIAS {sellrats} {get ladles from pack; give ladles to Noelle;get forks from pack; give forks to Noelle;get wrenches from pack; give wrenches to Noelle;get tongs from pack; give tongs to Noelle;get calipers from pack; give calipers to Noelle;}
-#ALIAS {rchest} {open chest; get all from chest;}
+#ALIAS {sellrats} {get tools from pack; give tools to Noelle;pm;}
+#ALIAS {rchest} {open chest; get all from chest;put tool in pack;}
+#ALIAS {cdoom} {get prayer book from pack; perform creeping doom; put prayer book in pack;}
+#ALIAS {calm} {sheathe kodachi;}
+#ALIAS {go} {draw kodachi;}
 
-#ALIAS {dhbb} {remove platinum pig charm from octiron bracelet; perform divine hand on platinum pig charm; attach platinum pig charm to octiron bracelet; put tiger fang in pack; enter flame; }
-#ALIAS {dhoc} {perform divine hand on octiron charm bracelet; get tiger fang from pack; wield tiger fang; enter flame; }
-#ALIAS {dhdjb} {perform divine hand on black steel charm bracelet; get tiger fang from pack; wield tiger fang; enter flame; }
-#ALIAS {dhfence} {remove platinum domino mask charm from octiron bracelet; perform divine hand on platinum domino mask charm; attach platinum domino mask charm to octiron bracelet; put tiger fang in pack; enter flame; }
+#ALIAS {dhat} {perform divine hand on beads;enter flame;}
+#ALIAS {dhdrum} {perform divine hand on dress;enter flame;}
+#ALIAS {dhbb} {remove platinum pig charm from octiron bracelet; perform divine hand on platinum pig charm; attach platinum pig charm to octiron bracelet; calm; enter flame;}
+#ALIAS {dhoc} {perform divine hand on octiron charm bracelet;enter flame; }
+#ALIAS {dhdjb} {perform divine hand on black steel charm bracelet;enter flame; speak djelian;}
+#ALIAS {dhfence} {remove platinum domino mask charm from octiron bracelet; perform divine hand on platinum domino mask charm; attach platinum domino mask charm to octiron bracelet; calm; speak agatean; enter flame; }
+#ALIAS {dhrat} {perform divine hand on clear dark blue saya; enter flame;}
+#ALIAS {dhmirodar} {get yellow book from dress; perform divine hand on yellow book; calm; put yellow book in dress; enter flame;}
 
 #ALIAS {gt} {db room Green Tea; db route 0; RuhsSpeedRun; n;};
 #ALIAS {gto} {db room Green Tea; db route 0; RuhsSpeedRun; n; offer services;};

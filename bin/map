@@ -1,1 +1,1 @@
-watch -ctn 0.4 'clear;cat logs/minimap.log'
+watch -ctn 0.4 'clear;cat ../logs/minimap.log'

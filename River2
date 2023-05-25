@@ -29,7 +29,7 @@ if [ -n "$TMUX" ] || [ "$DISC_SESSION_CREATE" = "1" ]; then
     tmux send-keys "tmux select-pane -t discworld:0.0" C-m
     tmux send-keys "tmux split-window -v -l 1" C-m
 
-    tmux send-keys "tmux send-keys 'watch -n 1 -t \"cat left_prompt.log\"' Enter" C-m
+    #tmux send-keys "tmux send-keys 'watch -n 1 -t \"cat left_prompt.log\"' Enter" C-b Right
     tmux select-window -t discworld:0:0
 fi
 

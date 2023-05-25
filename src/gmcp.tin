@@ -39,6 +39,7 @@
     #IF {"$debug" == "1"} { #SHOWME %1 };
     #VAR GMCP[oldvitals] {$GMCP[vitals]};
     #VAR GMCP[vitals] {%0};
+    #SYSTEM {truncate -s 0 $prompt_file};
     #LINE {log} {$prompt_file} {$GMCP[vitals] }
 
     #math {hploss} {$GMCP[vitals][hp] - $GMCP[oldvitals][hp]};
@@ -68,10 +69,20 @@
 #EVENT {IAC SB GMCP room.map IAC SE}
 {
     #IF {"$debug" == "1"} { #SHOWME %1 };
+    #VAR {minimap} {%0};
+    #REPLACE {minimap} {u001b} {};
+    #SYSTEM {truncate -s 0 logs/minimap.log};
+
+    #LINE {log} {logs/minimap.log} {$minimap};
+    #SYSTEM {sed -i -e 's/^/     /' logs/minimap.log};
 }
 
 
 #EVENT {IAC SB GMCP room.writtenmap IAC SE}
 {
     #IF {"$debug" == "1"} { #SHOWME %1 };
+    #VAR GMCP[room][mdt] {%0};
+    #REPLACE {GMCP[room][mdt]} {\\n} {};
+    #SYSTEM {truncate -s 0 logs/mapdoortext.log};
+    #LINE {log} {logs/mapdoortext.log} {$GMCP[room][mdt]};    
 }

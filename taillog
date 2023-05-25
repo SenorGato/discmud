@@ -1,7 +1,0 @@
-#/usr/bin/env bash
-
-pattern="\{([^{}]+)\}\{([^{}]+)\}"
-
-tail -f ./logs/prompt.log | while IFS= read -r line; do
-    echo $line; 
-done
