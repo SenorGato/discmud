@@ -1,7 +1,0 @@
-#CLASS PromptWriter kill
-#CLASS PromptWriter open 
-
-#VARIABLE prompt $GMCP[vitals]
-#CLASS prompt_write prompt_write_data.tin
-
-#CLASS {PromptWriter} CLOSE
