@@ -1,7 +1,7 @@
 #CLASS {channels} {kill};
 #CLASS {channels} {open};
 
-#VARIABLE {talker_log_toggle} {0};
+#VARIABLE {talker_log_toggle} {1};
 
 #FUNCTION {log_line_to_chat} {
     #script {ts} {date +"%I:%M%P"};
@@ -50,6 +50,11 @@
     };
 };
 #ACTION {^(Igame) %1 wisps{:|} %2} {
+    #if {"$talker_log_toggle" == "1"} {
+        #return @log_line_to_chat{};
+    };
+};
+#ACTION {^(trade) %1 wisps{:|} %2} {
     #if {"$talker_log_toggle" == "1"} {
         #return @log_line_to_chat{};
     };

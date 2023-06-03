@@ -1,0 +1,19 @@
+./bloat.sh
+1:watch -ctn 0.1 'cat ./left_prompt.log'
+
+./main.tin
+2:#VARIABLE {prompt_file} {logs/prompt.log}
+
+./junk14.sh
+5:tail -f ./logs/prompt.log | while IFS= read -r line; do
+32:    # Append the new line to "left_prompt.log"
+33:    printf "  Burden:%d GP:%d HP:%d\n" "$burden" "$gp" "$hp" > left_prompt.log
+35:    # Write the last key-value pair to "right_prompt.log"
+36:    printf "XP:%d\n" "$xp" > right_prompt.log
+16:00|senoraraton@moksha|~/bins/discmud|rg 'prompt_file' .                                                      [main]
+./main.tin
+2:#VARIABLE {prompt_file} {logs/prompt.log}
+
+./src/gmcp.tin
+42:    #SYSTEM {truncate -s 0 $prompt_file};
+43:    #LINE {log} {$prompt_file} {$GMCP[vitals] }

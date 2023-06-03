@@ -1,5 +1,3 @@
-#VARIABLE {test_var1} {1}
-
 #ALIAS {dhat} {perform divine hand on beads;enter flame;}
 #ALIAS {dhdrum} {perform divine hand on dress;enter flame;}
 #ALIAS {dhbb} {remove platinum pig charm from octiron bracelet; perform divine hand on platinum pig charm; attach platinum pig charm to octiron bracelet; calm; enter flame;}
@@ -7,8 +5,11 @@
 #ALIAS {dhescrow} {look at watch; perform divine hand on watch; go; enter flame;}
 #ALIAS {dhjm} {remove platinum starfish charm from octiron bracelet; perform divine hand on platinum starfish charm; calm; speak morporkian; attach platinum starfish charm to octiron bracelet; enter flame; }
 #ALIAS {dhoc} {perform divine hand on octiron charm bracelet;enter flame; }
-#ALIAS {dhdjb} {perform divine hand on black steel charm bracelet;enter flame; speak djelian;}
+#ALIAS {dhdjb} {go;perform divine hand on kodachi;enter flame; speak djelian;}
 #ALIAS {dhgen} {remove platinum girl charm from octiron bracelet; perform divine hand on platinum girl charm; calm; attach platinum girl charm to octiron bracelet; enter flame; }
 #ALIAS {dhfence} {remove platinum domino mask charm from octiron bracelet; perform divine hand on platinum domino mask charm; attach platinum domino mask charm to octiron bracelet; calm; speak agatean; enter flame; }
-#ALIAS {dhrat} {perform divine hand on clear dark blue saya;go; enter flame;}
+#ALIAS {dhrat} {perform divine hand on clear dark blue saya;go; enter flame;enter shed;}
+#ALIAS {dhbt} {perform divine hand on panties; calm; enter flame;}
+#ALIAS {dhephebe} {perform divine hand on main_pack; calm; enter flame;}
+#ALIAS {dhtang} {perform divine hand on garter; calm; speak agatean; enter flame;}
 #ALIAS {gto} {db room Green Tea; db route 0; RuhsSpeedRun; n; offer services;};

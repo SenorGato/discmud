@@ -1,6 +1,11 @@
 #CLASS {actions} {kill};
 #CLASS {actions} {open};
 
+
+
+#NOP ==[Room Descriptions] ==
+#ACTION {~\e[0m\e[32m%1} {#var exits %1}
+
 #NOP ==[TPA Alerts]==
 #HIGHLIGHT {^There is a sudden white flash.  Your magical shield has broken.$} {bold red underscore};
 #HIGHLIGHT {^There is a sudden white flash around {(?!a passing wizard).+}.$} {bold red underscore};

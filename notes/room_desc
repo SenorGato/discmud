@@ -1,5 +1,0 @@
-Query dabatase for room description of current room.
-If !room then trigger "l here" and capture, parse, write to db.
-
-
-
