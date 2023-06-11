@@ -1,10 +1,25 @@
-#NOP Create list for missions in tt++
-#NOP Write actions for the mission triggers.(GLHF)
-#NOP Write completion triggers
-#NOP Writer timers from completion triggers
-#NOP Render
-#NOP
-#NOP
-#NOP
+Missions:
+Dead Letters
+Job Market
+Sam Slager
+Agatean
+
+fail %1 #script psql query failed = NULL.  For each,return match ID || misson_type, Write failed
+failall #script psql query failed = NULL.  For each, write failed.
+
+On load ->  Return all times of jobs where failure = NULL && time > 4 hours, write failure 
+        -> Otherwise load all current active_jobs into $active_jobs
+
+Set the job type from the alias to request the job $job_type
+Verify the job was started with Action -> create row entry with $job_type
+Return the ID of the created job $job_id
+Add that ID to the list of active jobs in TT++ $active_jobs
+
+Action {job_complete} {search list of active jobs, get ID for $job_type. use ID to send Time + success to DB}
+Remove from TT++ active jobs
+Action {job_failure} {search list of active jobs, get IS for $job_type. use ID to send Time + failure to DB}
+Remove from TT++ active jobs
 
 
+Binary:
+watch -ctn 1 'psql -U postgres -c "SELECT * FROM discmud.timers WHERE completed_on >= NOW() - INTERVAL '60 minutes' and failure = false;"'

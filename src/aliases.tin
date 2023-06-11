@@ -1,5 +1,15 @@
+#NOP Workspace:
+#ALIAS {dumpstats} {
+        #var dump 0;
+        #WHILE {"$dump" == "0"} {
+            #log overwrite statsheet.log; 
+            #var dump 1;
+        };
+};
+
+
 #VARIABLE {palming} {1}
-#ALIAS {setsize} {rows 300;cols 72};
+#ALIAS {setsize} {rows 300;cols 99};
 
 #ALIAS {^clear$} {#split {0} {0};setsize;};
 #ALIAS {^rst$} {#read {main.tin};setsize;};
@@ -9,7 +19,7 @@
 #ALIAS {lart} {get coins & every gold jewellery & every silver jewellery from corpse;};
 
 #GAME
-#ALIAS {lewt} {get coins & rings & necklaces & bracelets & earrings & brooches & anklets & armbands & hair pins & hair clip & silk robes from corpses; coindrop; put coins & unkept robes & unkept rings & unkept necklaces in main_pack;};
+#ALIAS {lewt} {get coins & rings & necklaces & bracelets & earrings & brooches & anklets & armbands & hair pins & hair clip & silk robes from corpses; coindrop; put unkept robes & unkept rings & unkept necklaces in pk;};
 #ALIAS {coindrop} {drop cents & pennies & ptascpi & Saveloy-rhinu & Derechmus & Penny & Ha'penny & Farthing;}
 #ALIAS {gm} {get money from coin_pouch};
 #ALIAS {pm} {put money in coin_pouch};
@@ -20,9 +30,9 @@
 #ALIAS {hwa} {health all;};
 #ALIAS {con} {consider all;};
 #ALIAS {lic} {look in corpse;}
-#ALIAS {lip} {open main_pack; look in main_pack; main_pack;}
-#ALIAS {calm} {sheathe kodachi;}
-#ALIAS {go} {draw kodachi;}
+#ALIAS {lip} {open pk; look in pk;}
+#ALIAS {calm} {sheathe Lightsabre;}
+#ALIAS {go} {draw Lightsabre;}
 #ALIAS {loc} {locate identified things;}
 #ALIAS {sr} {RuhsSpeedRun;}
 #ALIAS {stats} {score brief stats;}
@@ -38,22 +48,22 @@
 
 #ALIAS {gt} {
     #IF {"$palming" == "1"} 
-        {#IF {"%2" == ""} {palm %1 from main_pack;};
+        {#IF {"%2" == ""} {palm %1 from pk;};
         #ELSE {palm %1 from %2;}
         };
     #ELSE {
-        #IF {"%2" == ""} {get %1 from main_pack;};
+        #IF {"%2" == ""} {get %1 from pk;};
         #ELSE {get %1 from %2;}
         };
 };
 
 #ALIAS {pt} {
     #IF {"$palming" == "1"} 
-        {#IF {"%2" == ""} {slip %1 into main_pack;};
+        {#IF {"%2" == ""} {slip %1 into pk;};
         #ELSE {slip %1 into %2;}
         };
     #ELSE {
-        #IF {"%2" == ""} {put %1 into main_pack;};
+        #IF {"%2" == ""} {put %1 into pk;};
         #ELSE {put %1 into %2;}
         };
 };
@@ -106,7 +116,7 @@
 
 #Defensive
 
-#ALIAS {sh} {get small shield from main_pack; perform major shield on me; put small shield in main_pack};
+#ALIAS {sh} {get small shield from pk; perform major shield on me; put small shield in pk};
 
 #Curing
 
@@ -126,6 +136,10 @@
     #IF {"%1" == ""} {perform light on me;};
     #ELSE {perform light on %1;};
 };
+#ALIAS {parch} {
+    #IF {"%1" == ""} {perform parch on me;};
+    #ELSE {perform parch on %1;};
+};
 #ALIAS {cool} {
     #IF {"%1" == ""} {perform cool on me;};
     #ELSE {perform cool on %1;};
@@ -137,7 +151,6 @@
 #ALIAS {hw} {perform holy weapon on weapon;}
 #ALIAS {sac} {get dagger from garter; perform holy sacrifice; put dagger in garter;}
 #ALIAS {clarify} {perform clarify;}
-
 #ALIAS {seea} {perform detect alignment;}
 #ALIAS {seeb} {perform see alignment;}
 #ALIAS {seec} {perform see consecration;}
@@ -147,49 +160,45 @@
 #ALIAS {find} {perform find on %1;}
 #ALIAS {sotto} {perform sotto voce on %1;}
 #ALIAS {dark} {perform profound darkness;}
-#ALIAS {parch} {
-    #IF {"%1" == ""} {perform parch on me;};
-    #ELSE {perform parch on %1;};
-};
 
 
 #CRAFTS
 
-#ALIAS {mend} {get needle from dress; sheathe kodachi; hold needle; get spool from dress; thread needle from spool; sew %1 with needle; put needle in dress; put spool in dress; }
+#ALIAS {mend} {unwear %1; get needle from dress; sheathe kodachi; hold needle; get spool from dress; thread needle from spool; sew %1 with needle; put needle in dress; put spool in dress; wear %1; }
 
 #MONEY
-#ALIAS {rateall} {rate coins & coins in coin_pouch as am;}
-#ALIAS {fen} {get at most 8 necklaces & rings & robes from main_pack; fence unkept rings & unkept necklaces & unkept robes to jones;}
+#ALIAS {rateall} {rate coins in all as am;}
+#ALIAS {fen} {get at most 8 necklaces & rings & robes from pk; fence unkept rings & unkept necklaces & unkept robes to jones;}
 
 #MISC
-#ALIAS {rm} {speak djelian; get yellow book from dress; open yellow book to page 3; read yellow book; turn page in yellow book;speak ephebian; read yellow book; turn page in yellow book; speak uberwaldean; read yellow book; close yellow book; put yellow book in dress;};
-#ALIAS {sellrats} {out; sw;sw;sw;n;get tools from main_pack; give tools to Noelle;s;ne;ne;ne;pm;enter shed;}
-#ALIAS {rchest} {open chest; get all from chest;put tool in main_pack;}
-#ALIAS {gapprepair} {unkeep %1; put %1 on altar;keep %1;look %1}
-#ALIAS {yo} {gt yoyo main_pack; attempt yoyo trick with yo-yo; pt yoyo main_pack;}
-#ALIAS {senssu} {get fan from main_pack; sheathe kodachi; hold fan; snap fan; put fan in main_pack;}
-#ALIAS {uw} {gt uberwald_growler;speak uberwaldean; tug cord on growler; tug cord on growler; tug cord on growler; pt uberwald_growler; }
-#ALIAS {uwu} {speak uberwaldean; tug cord on growler;}
-#ALIAS {idl} {senssu; uw; yo; uw;} 
+#ALIAS {rm} {speak uberwaldian; get yellow book from dress; open yellow book to page 3; read yellow book; turn page in yellow book; read yellow book; turn page in yellow book; read yellow book; close yellow book; put yellow book in dress;};
+#ALIAS {sellrats} {out; sw;sw;sw;n;get tools from pk; give tools to Noelle;s;ne;ne;ne;pm;enter shed;}
+#ALIAS {rchest} {open chest; get all from chest;put tool in pk;}
+#ALIAS {gapprepair} {unkeep %1;remove %1; put %1 on altar;keep %1;wear %1;look %1}
+#ALIAS {yo} {gt yoyo pk; attempt yoyo trick with yo-yo; pt yoyo pk;}
+#ALIAS {senssu} {get fan from pk; sheathe kodachi; hold fan; snap fan; put fan in pk;}
+#ALIAS {uwu} {speak ephebian; tug cord on growler;}
+#ALIAS {idl} {sh;sh;uwu;uwu;uwu;} 
 
 #MISSIONS
-#
+
 #ALIAS {cobb} {pry cobble with shovel;gt cobble;place cobble;}
 #ALIAS {^sett$} {pry sett with shovel;gt sett;place sett;}
 
 #Tang
-#ALIAS {haiku} {get brush & paint from main_pack; hold brush; open paint; compose message; close paint; put brush & paint in main_pack;}
-
-#ALIAS {inq} {inquire after addressee;}
-#ALIAS {del} {db npc %2; db route 0;gt %1 main_pack; deliver %1 to %2;}
-
-#ALIAS {dl_check} {#if {"%0" == ""} {check pigeonholes;};#else {offer to deliver %1; read letter;}}
+#ALIAS {haiku} {get brush & paint from pk; hold brush; open paint; compose message; close paint; put brush & paint in pk;}
 
 #ALIAS {dl} {
     #REGEXP {$GMCP[room][info][identifier]} {109a9d6ff64b288e95580099e5b72864d67e4d33} 
         {dl_check %1} 
         {perform divine hand on deadletters; calm;speak morporkian; enter flame;dl_check %1;}
 };
+
+#ALIAS {dl_check} {#if {"%0" == ""} {check pigeonholes;};#else {offer to deliver %1;#var new_mission %1; read letter;}}
+#ACTION {^Frank grabs a} {#script {timers} {}}
+
+#ALIAS {deci} {decipher handwriting on letter;}
+#ALIAS {inq} {inquire after addressee;}
 
 #Slager
 #ALIAS {saus} {get corpse from icebox;}
@@ -230,4 +239,4 @@
 #Working Area
 
 
-#ALIAS {ka} {uwu; uwu; kill every wealthy woman & every child & every sailor & every farmer & every scribe & every trader & every dealer & every bearded man & every old woman & every old man & every architect & every mason & every crippled man & every engineer & every merchant & every ambassador & every young man & every recruit & every labourer & every scruffy man & every vagabond & every tramp & every peasant & every madman & every young warrior & every wealthy man &           }
+#ALIAS {ka} {kill every wealthy woman & every child & every sailor & every farmer & every scribe & every trader & every dealer & every bearded man & every old woman & every old man & every architect & every mason & every crippled man & every engineer & every merchant & every ambassador & every young man & every recruit & every labourer & every scruffy man & every vagabond & every tramp & every peasant & every madman & every young warrior & every wealthy man &           }
