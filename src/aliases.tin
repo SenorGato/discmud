@@ -188,20 +188,9 @@
 #Tang
 #ALIAS {haiku} {get brush & paint from pk; hold brush; open paint; compose message; close paint; put brush & paint in pk;}
 
-#ALIAS {dl} {
-    #REGEXP {$GMCP[room][info][identifier]} {109a9d6ff64b288e95580099e5b72864d67e4d33} 
-        {dl_check %1} 
-        {perform divine hand on deadletters; calm;speak morporkian; enter flame;dl_check %1;}
-};
-
-#ALIAS {dl_check} {#if {"%0" == ""} {check pigeonholes;};#else {offer to deliver %1;#var new_mission %1; read letter;}}
-#ACTION {^Frank grabs a} {#script {timers} {}}
-
-#ALIAS {deci} {decipher handwriting on letter;}
-#ALIAS {inq} {inquire after addressee;}
-
 #Slager
 #ALIAS {saus} {get corpse from icebox;}
+
 #ALIAS {colourpalette}
 {
 	#foreach {a;b;c;d;e;f} {cnt1}

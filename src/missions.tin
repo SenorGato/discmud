@@ -1,11 +1,35 @@
+#NOP ===IDEAS===
+#NOP Configure proper stale times on per mission basis.
+#NOP ADD XP/Currency into table
 #CLASS {missions} {kill};
 #CLASS {missions} {open};
 
-#script {old_jobs} {#system psql -U postgres -c "SELECT * from discmud.timers WHERE failure IS NULL;"}
+#VARIABLE {stale_job_time} {6000};
 
-#FOREACH {old_jobs} {job} {#showme $job;}
-#NOP In FOREACH test each job(-2 init) for time, if >4 hours write fail else add to current_jobs
+#script {old_jobs} {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -t -A -c "SELECT * from timers WHERE xp IS NULL;"}
 
-#ALIAS {miss} {offer to deliver %1; #var {job_type} {%1}}
-#ACTION {^Frank.*$} {#SHOWME "We matched frank"}
+#FOREACH {$old_jobs[%*]} {job} {
+    #SCRIPT {current_time} {date +%s};
+    #REGEX {$job} {^{.*?}\|{.*?}\|{.*?\-.*?\-.*? .*}\-{.*}$} {#var id &1;#var type &2; #script {unix_time} {date -d "&3" +%s}; };
+    #MATH {time_diff} {$current_time[1] - $unix_time[1]};
+    #IF {$time_diff > $stale_job_time} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "UPDATE timers SET xp = 0, money = "", completed_on = NOW() WHERE id = $id;"}} {#VAR active_missions[$type] $id};
+};
+
+#ALIAS {fail} {#FOREACH {$active_missions[]} {test} {#REGEXP {$test} {^%1$} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "UPDATE timers SET xp = 0, money = "", completed_on = NOW() WHERE id = $active_missions[$test];";#unvar active_mission[$test]; }} {#showme "miss"}}};
+#ALIAS {failall} {#FOREACH {$active_missions[]} {test} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "UPDATE timers SET xp = 0, money = "", completed_on = NOW() WHERE id = $active_missions[$test];"; #unvar active_mission[$test]; }}}
+
+#ALIAS {dl} {
+    #REGEXP {$GMCP[room][info][identifier]} {109a9d6ff64b288e95580099e5b72864d67e4d33} 
+        {dl_check %1} 
+        {perform divine hand on deadletters; calm;speak morporkian; enter flame;dl_check %1;}
+};
+
+#ALIAS {dl_check} {#if {"%0" == ""} {check pigeonholes;};#else {offer to deliver %1;#var new_mission %1; read letter;}}
+
+#ACTION {Frank says to you in Morporkian: Very well, Asami, let's see if yoo can figure this one oot.} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "INSERT INTO timers (mission_name) VALUES ('$new_mission');" #var $active_missions[$new_misson]}};
+#ACTION {You have been awarded %1 experience points for delivering this letter.} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "UPDATE timers SET xp = %1, completed_on = NOW() WHERE id =$active_mission[$new_mission];"};};
+
+#ALIAS {deci} {decipher handwriting on letter;}
+#ALIAS {inq} {inquire after addressee;}
+
 #CLASS {missions} {close};

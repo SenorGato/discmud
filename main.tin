@@ -18,6 +18,8 @@
 #READ {src/aliases.tin};
 #READ {src/travel_locs.tin};
 #READ {src/gmcp.tin};
+#READ {src/missions.tin};
+#READ {src/timers.tin};
 
 #READ {src/combat.tin};
 #READ {src/db.tin};

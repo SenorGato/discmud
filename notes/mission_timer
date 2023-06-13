@@ -4,12 +4,6 @@ Job Market
 Sam Slager
 Agatean
 
-fail %1 #script psql query failed = NULL.  For each,return match ID || misson_type, Write failed
-failall #script psql query failed = NULL.  For each, write failed.
-
-On load ->  Return all times of jobs where failure = NULL && time > 4 hours, write failure 
-        -> Otherwise load all current active_jobs into $active_jobs
-
 Set the job type from the alias to request the job $job_type
 Verify the job was started with Action -> create row entry with $job_type
 Return the ID of the created job $job_id

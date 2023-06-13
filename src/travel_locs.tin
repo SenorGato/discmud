@@ -20,6 +20,7 @@
 #ALIAS {dhoasis} {remove platinum lightning charm from left_bracelet;perform divine hand on platinum lightning charm;attach platinum lightning charm to left_bracelet;calm;speak djelian;enter flame;}
 #ALIAS {dhahmed} {remove gold camel charm from left_bracelet;perform divine hand on gold camel charm;attach gold camel charm to left_bracelet;calm;speak djelian;enter flame;}
 #ALIAS {dhpict} {remove platinum lizard charm from left_bracelet;perform divine hand on platinum lizard charm;attach platinum lizard charm to left_bracelet;calm;speak djelian;enter flame;}
+#ALIAS {dhfarm} {remove gold waning moon charm from left_bracelet;perform divine hand on gold waning moon charm;attach gold waning moon charm to left_bracelet;go;speak djelian;enter flame;}
 
 #NOP----right_bracelet
 #ALIAS {dh5} {remove platinum moon dragon charm from right_bracelet;perform divine hand on platinum moon dragon charm;attach platinum moon dragon charm to right_bracelet;speak morporkain;enter flame;}

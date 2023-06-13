@@ -1,4 +1,8 @@
 [0m#LOG: LOGGING OUTPUT TO 'stat_dump'[0m
+[38;5;213mstats raw[0m
+[0mCon: 13       Dex: 13       Int: 13       Str: 13       Wis: 15       Hgt: 177 cm   Wgt: 80.0 kg[0m
+[0m[0m
+[0mWhat?[0m
 [38;5;213mskills raw[0m
 [0mSKILL                                   Level Unmodified bonus[0m
 [0madventuring.acrobatics.balancing            0     0[0m
@@ -11,7 +15,7 @@
 [0madventuring.movement.climbing.rock         43   161[0m
 [0madventuring.movement.climbing.rope          0     0[0m
 [0madventuring.movement.climbing.tree         94   197[0m
-[0madventuring.movement.following.evade        0     0[0m
+[0madventuring.movement.following.evade        1     5[0m
 [0madventuring.movement.following.pursuit      0     0[0m
 [0madventuring.movement.riding.camel          25   118[0m
 [0madventuring.movement.riding.horse          25   118[0m
@@ -58,10 +62,10 @@
 [0mcrafts.carpentry.furniture                 10    52[0m
 [0mcrafts.carpentry.turning                   10    52[0m
 [0mcrafts.carpentry.whittling                 10    52[0m
-[0mcrafts.culinary                            24   116[0m
+[0mcrafts.culinary                            25   118[0m
 [0mcrafts.culinary.baking                     25   118[0m
 [0mcrafts.culinary.brewing                     5    26[0m
-[0mcrafts.culinary.butchering                103   202[0m
+[0mcrafts.culinary.butchering                106   204[0m
 [0mcrafts.culinary.cooking                     5    26[0m
 [0mcrafts.culinary.distilling                  5    26[0m
 [0mcrafts.culinary.preserving                  5    26[0m
@@ -90,7 +94,7 @@
 [0mcrafts.medicine.treatment                  10    52[0m
 [0mcrafts.mining                               5    26[0m
 [0mcrafts.music                                5    26[0m
-[0mcrafts.points                              41   159[0m
+[0mcrafts.points                              42   160[0m
 [0mcrafts.pottery                              5    26[0m
 [0mcrafts.smithing                            30   132[0m
 [0mcrafts.smithing.black                      23   113[0m
@@ -101,18 +105,18 @@
 [0mcrafts.smithing.gold                      100   201[0m
 [0mcrafts.smithing.locks                      10    52[0m
 [0mcrafts.smithing.silver                     10    52[0m
-[0mfaith                                     152   228[0m
+[0mfaith                                     169   237[0m
 [0mfaith.items                                75   187[0m
 [0mfaith.items.rod                           100   201[0m
 [0mfaith.items.scroll                         50   169[0m
-[0mfaith.points                              193   249[0m
-[0mfaith.rituals                             188   247[0m
+[0mfaith.points                              237   273[0m
+[0mfaith.rituals                             196   251[0m
 [0mfaith.rituals.curing                      140   222[0m
 [0mfaith.rituals.curing.self                 180   243[0m
 [0mfaith.rituals.curing.target               100   201[0m
 [0mfaith.rituals.defensive                   135   219[0m
 [0mfaith.rituals.defensive.area               35   145[0m
-[0mfaith.rituals.defensive.self              280   296[0m
+[0mfaith.rituals.defensive.self              282   297[0m
 [0mfaith.rituals.defensive.target             90   195[0m
 [0mfaith.rituals.misc                        252   281[0m
 [0mfaith.rituals.misc.area                   200   254[0m
@@ -120,13 +124,13 @@
 [0mfaith.rituals.misc.target                 301   307[0m
 [0mfaith.rituals.offensive                   213   260[0m
 [0mfaith.rituals.offensive.area              200   254[0m
-[0mfaith.rituals.offensive.target            226   267[0m
-[0mfaith.rituals.special                     200   254[0m
-[0mfighting                                   46   165[0m
-[0mfighting.defence                           51   170[0m
+[0mfaith.rituals.offensive.target            227   267[0m
+[0mfaith.rituals.special                     240   275[0m
+[0mfighting                                   48   167[0m
+[0mfighting.defence                           53   172[0m
 [0mfighting.defence.blocking                  10    52[0m
 [0mfighting.defence.dodging                   27   123[0m
-[0mfighting.defence.parrying                 117   209[0m
+[0mfighting.defence.parrying                 122   212[0m
 [0mfighting.melee                             46   165[0m
 [0mfighting.melee.axe                         10    52[0m
 [0mfighting.melee.dagger                      10    52[0m
@@ -136,25 +140,25 @@
 [0mfighting.melee.misc                        10    52[0m
 [0mfighting.melee.polearm                     13    68[0m
 [0mfighting.melee.sword                      295   303[0m
-[0mfighting.points                            78   189[0m
+[0mfighting.points                            80   190[0m
 [0mfighting.range                             12    63[0m
 [0mfighting.range.fired                       15    79[0m
 [0mfighting.range.thrown                      10    52[0m
-[0mfighting.special                           81   190[0m
+[0mfighting.special                           89   194[0m
 [0mfighting.special.mounted                   10    52[0m
-[0mfighting.special.tactics                  235   272[0m
+[0mfighting.special.tactics                  266   289[0m
 [0mfighting.special.unarmed                   10    52[0m
 [0mfighting.special.weapon                    70   185[0m
 [0mfighting.unarmed                           11    58[0m
 [0mfighting.unarmed.grappling                 10    52[0m
 [0mfighting.unarmed.striking                  12    63[0m
 [0mmagic                                       0     0[0m
-[0mpeople.culture.agatean                    130   217[0m
-[0mpeople.culture.ankh-morporkian            147   225[0m
+[0mpeople.culture.agatean                    131   217[0m
+[0mpeople.culture.ankh-morporkian            150   227[0m
 [0mpeople.culture.genuan                     126   214[0m
 [0mpeople.culture.klatchian                  126   214[0m
 [0mpeople.culture.lancrastian                126   214[0m
-[0mpeople.points                             125   213[0m
+[0mpeople.points                             126   214[0m
 [0mpeople.teaching.adventuring                 0     0[0m
 [0mpeople.teaching.covert                      0     0[0m
 [0mpeople.teaching.crafts                      0     0[0m

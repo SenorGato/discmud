@@ -30,7 +30,8 @@ CREATE TABLE IF NOT EXISTS timers(
     mission_name mission_tag,
     created_on  TIMESTAMPTZ NOT NULL DEFAULT date_trunc('second', NOW()),
     completed_on  TIMESTAMPTZ,
-    failed BOOLEAN
+    xp int,
+    money TEXT
 );
 
 CREATE TRIGGER truncate_completed_on_trigger
