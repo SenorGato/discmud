@@ -1,7 +1,9 @@
 #CLASS {actions} {kill};
 #CLASS {actions} {open};
 
+#NOP ==[Asami Industries]
 
+#HIGHLIGHT {isn't in the neighbourhood} {light orange};
 
 #NOP ==[Room Descriptions] ==
 #ACTION {~\e[0m\e[32m%1} {#var exits %1}

@@ -6,13 +6,13 @@
 
 #VARIABLE {stale_job_time} {6000};
 
-#script {old_jobs} {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -t -A -c "SELECT * from timers WHERE xp IS NULL;"}
+#SCRIPT {old_jobs} {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -t -A -c "SELECT * from timers WHERE xp IS NULL;"}
 
 #FOREACH {$old_jobs[%*]} {job} {
-    #SCRIPT {current_time} {date +%s};
-    #REGEX {$job} {^{.*?}\|{.*?}\|{.*?\-.*?\-.*? .*}\-{.*}$} {#var id &1;#var type &2; #script {unix_time} {date -d "&3" +%s}; };
-    #MATH {time_diff} {$current_time[1] - $unix_time[1]};
-    #IF {$time_diff > $stale_job_time} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "UPDATE timers SET xp = 0, money = "", completed_on = NOW() WHERE id = $id;"}} {#VAR active_missions[$type] $id};
+   #SCRIPT {current_time} {date +%s};
+   #REGEX {$job} {^{.*?}\|{.*?}\|{.*?\-.*?\-.*? .*}\-{.*}$} {#var id &1;#var type &2; #script {unix_time} {date -d "&3" +%s}; };
+   #MATH {time_diff} {$current_time[1] - $unix_time[1]};
+   #IF {$time_diff > $stale_job_time} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "UPDATE timers SET xp = 0, money = "", completed_on = NOW() WHERE id = $id;"}} {#VAR active_missions[$type] $id};
 };
 
 #ALIAS {fail} {#FOREACH {$active_missions[]} {test} {#REGEXP {$test} {^%1$} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "UPDATE timers SET xp = 0, money = "", completed_on = NOW() WHERE id = $active_missions[$test];";#unvar active_mission[$test]; }} {#showme "miss"}}};

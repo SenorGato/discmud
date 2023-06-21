@@ -1,14 +1,19 @@
+#NOP ---Paths---
+#ALIAS {lanfear} {db room New Bridge;db route 2;sr;s;}
+
 #NOP ----Person----
 #ALIAS {dhat} {perform divine hand on beads;calm;speak morporkian;enter flame;}
 #ALIAf {dhmoon} {get yellow book from dress; perform divine hand on yellow book; calm; put yellow book in dress; enter flame;}
 #ALIAS {dhtang} {perform divine hand on Tang family crest; calm; speak agatean; enter flame;u;se;e;e;n;w;w;u;n;}
+#ALIAS {dhtangb} {perform divine hand on Tang family crest; calm; speak agatean; enter flame;stairs;enter bay;}
 #ALIAS {home} {get house_key from dress; perform divine hand on house_key;calm;speak agatean;enter flame;n;}
 #ALIAS {dhbb} {perform divine hand on coin_pouch;calm; speak agatean; enter flame;}
 #ALIAS {dhfence} {perform divine hand on jade pendant;calm; speak agatean; enter flame;}
 #ALIAS {dhjm} {perform divine hand on silver bamboo hairpin; calm; speak morporkian;enter flame;}
 #ALIAS {dhpot} {perform divine hand on left_bracelet; calm;speak morporkian;enter flame;}
 #ALIAS {dhsam} {perform divine hand on right_bracelet; calm;speak morporkian;enter flame;}
-#ALIAS {dhrat} {perform divine hand on saya; go; enter flame;enter shed;}
+#ALIAS {dhrat} {perform divine hand on belt; go; enter flame;enter shed;}
+#ALIAS {dhdrum} {perform divine hand on watch;calm;enter flame;}
 
 #NOP----left_bracelet
 #ALIAS {dhescrow} {remove platinum black widow spider charm from left_bracelet;perform divine hand on platinum black widow spider charm; go; speak uberwaldean; attach charm to left_bracelet; enter flame;}
@@ -21,6 +26,9 @@
 #ALIAS {dhahmed} {remove gold camel charm from left_bracelet;perform divine hand on gold camel charm;attach gold camel charm to left_bracelet;calm;speak djelian;enter flame;}
 #ALIAS {dhpict} {remove platinum lizard charm from left_bracelet;perform divine hand on platinum lizard charm;attach platinum lizard charm to left_bracelet;calm;speak djelian;enter flame;}
 #ALIAS {dhfarm} {remove gold waning moon charm from left_bracelet;perform divine hand on gold waning moon charm;attach gold waning moon charm to left_bracelet;go;speak djelian;enter flame;}
+#ALIAS {dhsunk} {remove gold anchor charm from left_bracelet;perform divine hand on gold anchor charm;attach gold anchor charm to left_bracelet;speak Agatean;calm;enter flame; }
+#ALIAS {dhspice} {remove platinum angel charm from left_bracelet; perform divine hand on platinum angel charm; attach platinum angel charm to left_bracelet;speak klatchian;calm;enter flame;}
+#ALIAS {dhsator} {remove platinum fishing rod charm from left_bracelet; perform divine hand on platinum fishing rod charm; attach platinum fishing rod charm to left_bracelet; speak morporkian;calm;enter flame;}
 
 #NOP----right_bracelet
 #ALIAS {dh5} {remove platinum moon dragon charm from right_bracelet;perform divine hand on platinum moon dragon charm;attach platinum moon dragon charm to right_bracelet;speak morporkain;enter flame;}
@@ -35,19 +43,18 @@
 #ALIAS {dhcreel} {remove platinum sailor charm from right_bracelet;perform divine hand on platinum sailor charm;attach platinum sailor charm to right_bracelet;speak morporkian;calm;enter flame;}
 #ALIAS {dhraz} {remove platinum starfish charm from right_bracelet;perform divine hand on platinum starfish charm;attach platinum starfish charm to right_bracelet;speak morporkian;calm;enter flame;}
 #ALIAS {dhass} {remove platinum new moon charm from right_bracelet;perform divine hand on platinum new moon charm;attach platinum new moon charm to right_bracelet;speak morporkian;calm;enter flame;}
-#ALIAS {dhdeath} {remove platinum domino mask charm from right_bracelet; perform divine hand on platinum domino mask charm;attach platinum domino mask charm to right_bracelet;calm;enter flame;}
+#ALIAS {dhnow} {remove platinum domino mask charm from right_bracelet; perform divine hand on platinum domino mask charm;attach platinum domino mask charm to right_bracelet;calm;enter flame;}
 #ALIAS {dhsheep} {remove gold blowpipe charm from right_bracelet;perform divine hand on gold blowpipe charm;attach gold blowpipe charm to right_bracelet;calm;enter flame;}
 #ALIAS {dhscrog} {remove gold oak charm from right_bracelet;perform divine hand on gold oak charm;attach gold oak charm to right_bracelet;calm;enter flame;}
 
 #NOP ----Rings----
+#ALIAS {dhdjb} {perform divine hand on djb_bank;go;speak djelian; enter flame;}
+#ALIAS {dhgen} {perform divine hand on genua_bank;calm;speak morporkian;enter flame;}
+#ALIAS {dhwall} {perform divine hand on djb_wall;speak djelian; go;enter flame;}
+
 #ALIAS {dhsto} {perform divine hand on sto_lat_bank; speak morporkian;calm;enter flame;}
 #ALIAS {dheph} {perform divine hand on ephebe_bank;calm; speak ephebian; enter flame;}
 #ALIAS {dhoc} {perform divine hand on oc_bank;enter flame;}
-#ALIAS {dhdjb} {perform divine hand on djb_bank;go;speak djelian; enter flame;}
-#ALIAS {dhgen} {perform divine hand on genua_bank;calm;speak morporkian;enter flame;}
-#ALIAS {dhamgb} {perform divine hand on am_genua_bank; speak morporkian;calm;go;enter flame;}
-#ALIAS {dhnla} {perform divine hand on nl_ankh; speak morporkian;calm;go;enter flame;}
-#ALIAS {dhdrum} {perform divine hand on the_drum;calm;enter flame;}
 
 #NOP----dress----
 #ALIAS {dhbank} {get balance book from dress; perform divine hand on balance book; speak morporkian;calm;go; enter flame;s; balance book;open balance book to page 8;read balance book;close balance book;put balance book in dress;}

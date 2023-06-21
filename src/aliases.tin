@@ -9,7 +9,7 @@
 
 
 #VARIABLE {palming} {1}
-#ALIAS {setsize} {rows 300;cols 99};
+#ALIAS {setsize} {rows 300;cols 999};
 
 #ALIAS {^clear$} {#split {0} {0};setsize;};
 #ALIAS {^rst$} {#read {main.tin};setsize;};
@@ -33,6 +33,8 @@
 #ALIAS {lip} {open pk; look in pk;}
 #ALIAS {calm} {sheathe Lightsabre;}
 #ALIAS {go} {draw Lightsabre;}
+#ALIAS {bead} {sheathe fang in sapphire-studded sword belt;hold beads in right hand;}
+#ALIAS {fang} {unhold beads; draw fang into my right hand;}
 #ALIAS {loc} {locate identified things;}
 #ALIAS {sr} {RuhsSpeedRun;}
 #ALIAS {stats} {score brief stats;}
@@ -149,7 +151,7 @@
     #ELSE {perform warm on %1;};
 };
 #ALIAS {hw} {perform holy weapon on weapon;}
-#ALIAS {sac} {get dagger from garter; perform holy sacrifice; put dagger in garter;}
+#ALIAS {sac} {draw dagger; perform holy sacrifice; sheathe dagger in boots;}
 #ALIAS {clarify} {perform clarify;}
 #ALIAS {seea} {perform detect alignment;}
 #ALIAS {seeb} {perform see alignment;}
@@ -167,18 +169,31 @@
 #ALIAS {mend} {unwear %1; get needle from dress; sheathe kodachi; hold needle; get spool from dress; thread needle from spool; sew %1 with needle; put needle in dress; put spool in dress; wear %1; }
 
 #MONEY
-#ALIAS {rateall} {rate coins in all as am;}
+#ALIAS {rateall} {rate coins as agatean;}
+#ALIAS {ratesep} {rate ephebe coins as bp; rate djb coins as bp; rate lancre coins as bp; rate genua coins as bp; rate am coins as bp }
+#ALIAS {ratesome} {gm;rate %1 coins as %2;}
+#ALIAS {eval} {#SHOWME This is a good alias name.}
 #ALIAS {fen} {get at most 8 necklaces & rings & robes from pk; fence unkept rings & unkept necklaces & unkept robes to jones;}
 
+#IDLE
+
+#ALIAS {idl} {speak uberwaldean; rawr; nyan; neko; sh;pray;hskills} 
+#ALIAS {rawr} {palm yellow book from dress; open yellow book to page 3; read yellow book; turn page in yellow book; read yellow book; turn page in yellow book; read yellow book; close yellow book; slip yellow book into dress;};
+#ALIAS {uwu} {palm growler from pk; tug cord on growler; slip growler into pk}
+#ALIAS {nyan} {palm tm_pearl from pk; value tm_pearl;value tm_pearl;value tm_pearl;value tm_pearl; value tm_pearl in lancre; slip tm_pearl into pk;} 
+#ALIAS {neko} {value octiron charm bracelet; value octiron charm bracelet;value octiron charm bracelet;value octiron charm bracelet in lancre;} 
+#ALIAS {yarn} {palm rope from pk; }
+#ALIAS {poi} {palm left_poi from pk; calm;wield left_poi; whirl poi in wall plane pattern; whirl poi in wall plane pattern;put left_poi in pk;}
+#ALIAS {yo} {gt yoyo pk; attempt yoyo trick with yo-yo; pt yoyo pk;}
+#ALIAS {senssu} {get fan from pk; sheathe kodachi; hold fan; snap fan; put fan in pk;}
+
 #MISC
-#ALIAS {rm} {speak uberwaldian; get yellow book from dress; open yellow book to page 3; read yellow book; turn page in yellow book; read yellow book; turn page in yellow book; read yellow book; close yellow book; put yellow book in dress;};
+
 #ALIAS {sellrats} {out; sw;sw;sw;n;get tools from pk; give tools to Noelle;s;ne;ne;ne;pm;enter shed;}
 #ALIAS {rchest} {open chest; get all from chest;put tool in pk;}
 #ALIAS {gapprepair} {unkeep %1;remove %1; put %1 on altar;keep %1;wear %1;look %1}
-#ALIAS {yo} {gt yoyo pk; attempt yoyo trick with yo-yo; pt yoyo pk;}
-#ALIAS {senssu} {get fan from pk; sheathe kodachi; hold fan; snap fan; put fan in pk;}
-#ALIAS {uwu} {speak ephebian; tug cord on growler;}
-#ALIAS {idl} {sh;sh;uwu;uwu;uwu;} 
+#ALIAS {balbook} {palm balance book from dress;balance book;turn book to page 9; read book;slip balance book into dress;}
+#ALIAS {moo} {meditate on obsecration}
 
 #MISSIONS
 
@@ -187,9 +202,10 @@
 
 #Tang
 #ALIAS {haiku} {get brush & paint from pk; hold brush; open paint; compose message; close paint; put brush & paint in pk;}
+#ALIAS {exercise} {divine a malign presence;summon divine powers;cleanse my spirit;exorcise spirit from this room;}
 
 #Slager
-#ALIAS {saus} {get corpse from icebox;}
+#ALIAS {saus} {put %1 on workbench;debone %1 on workbench;grind meats in grinder; extrude meats from extruder;e;give sausages to Sam;}
 
 #ALIAS {colourpalette}
 {
@@ -228,4 +244,4 @@
 #Working Area
 
 
-#ALIAS {ka} {kill every wealthy woman & every child & every sailor & every farmer & every scribe & every trader & every dealer & every bearded man & every old woman & every old man & every architect & every mason & every crippled man & every engineer & every merchant & every ambassador & every young man & every recruit & every labourer & every scruffy man & every vagabond & every tramp & every peasant & every madman & every young warrior & every wealthy man &           }
+#ALIAS {ka} {kill every wealthy woman & every child & every sailor & every farmer & every scribe & every trader & every dealer & every bearded man & every old woman & every old man & every architect & every mason & every crippled man & every engineer & every merchant & every ambassador & every young man & every recruit & every labourer & every scruffy man & every vagabond & every tramp & every peasant & every madman & every young warrior & every wealthy man & mercenary &           }

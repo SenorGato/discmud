@@ -1,0 +1,168 @@
+[0mWhat?[0m
+[0m[0m
+[0mRows changed from 300 to 300.[39;49m[0m[0m
+[0m[0m
+[0mColumns changed from 99 to 99.[39;49m[0m[0m
+[0m[0m
+[0mNearby to the west, the big bronze gong in the Temple of Small Gods bongs five times.[39;49m[0m[0m
+[38;5;213ml[0m
+[0m[High Altar of Sek][39;49m[0m[0m
+[0m[38;5;208mThis central part of Sek's temple is the site of the High Altar, a flat slab of mostly black stone[0m[0m[39;49m[0m[0m
+[0mat the base of a shallow depression.  To the south is the huge statue of Sek himself and to the[39;49m[0m[0m
+[0mnorth is the relative safety of the entrance hall.  There is an iron door in the bare stone of the[39;49m[0m[0m
+[0mwest wall.[39;49m[0m[0m
+[0m[32mThere are three obvious exits: north, south and west.[39;49m[0m[39;49m[0m[0m
+[38;5;213mrst[0m
+[0mWhat?[0m
+[0m[0m
+[0mRows changed from 300 to 300.[39;49m[0m[0m
+[0m[0m
+[0mColumns changed from 99 to 99.[39;49m[0m[0m
+[38;5;213ml[0m
+[0m[High Altar of Sek][39;49m[0m[0m
+[0mThis central part of Sek's temple is the site of the High Altar, a flat slab of mostly black stone[39;49m[0m[0m
+[0mat the base of a shallow depression.  To the south is the huge statue of Sek himself and to the[39;49m[0m[0m
+[0mnorth is the relative safety of the entrance hall.  There is an iron door in the bare stone of the[39;49m[0m[0m
+[0mwest wall.[39;49m[0m[0m
+[0m[32mThere are three obvious exits: north, south and west.[39;49m[0m[39;49m[0m[0m
+[0m[0m
+[0mIn the distance to the north, Old Tom, the tongueless and magical octiron bell of Unseen[39;49m[0m[0m
+[0m     University, tolls five sonorous silences.[39;49m[0m[0m
+[0mTo the north, the bell of the Assassins' Guild clock slowly chimes five times.[39;49m[0m[0m
+[38;5;213mrst[0m
+[0mWhat?[0m
+[0m[0m
+[0mRows changed from 300 to 300.[39;49m[0m[0m
+[0m[0m
+[0mColumns changed from 99 to 99.[39;49m[0m[0m
+[38;5;213ml[0m
+[0m[High Altar of Sek][39;49m[0m[0m
+[0mThis central part of Sek's temple is the site of the High Altar, a flat slab of mostly black stone[39;49m[0m[0m
+[0mat the base of a shallow depression.  To the south is the huge statue of Sek himself and to the[39;49m[0m[0m
+[0mnorth is the relative safety of the entrance hall.  There is an iron door in the bare stone of the[39;49m[0m[0m
+[0mwest wall.[39;49m[0m[0m
+[0m[32mThere are three obvious exits: north, south and west.[39;49m[0m[39;49m[0m[0m
+[38;5;213mcols[0m
+[0mColumns currently set to 99.[39;49m[0m[0m
+[38;5;213mhelp cols[0m
+[0m [39;49m[0m[0m
+[0m[39;49m[0m[0m
+[0m[1mcols                                   Discworld player help                                   cols[39;49m[0m[0m
+[0m[1m[39;49m[0m[39;49m[0m[0m
+[0m[39;49m[0m[0m
+[0m[1mName[39;49m[0m[39;49m[0m[0m
+[0m     cols - Set the number of columns on your screen.                                              [39;49m[0m[0m
+[0m[39;49m[0m[0m
+[0m[1mSyntax[39;49m[0m[39;49m[0m[0m
+[0m     options terminal cols=[number]                                                                [39;49m[0m[0m
+[0m[39;49m[0m[0m
+[0m[1mDescription[39;49m[0m[39;49m[0m[0m
+[0m     The cols command is used to set the number of columns of the terminal that you are using [39;49m[0m[0m
+[0m     to play the mud.  The default depends on your terminal type, if it is set to "network"   [39;49m[0m[0m
+[0m     and your terminal supports it there should be no need to use this command.  If you use   [39;49m[0m[0m
+[0m     another terminal type or if your terminal doesn't support the "network" terminal type it [39;49m[0m[0m
+[0m     is set to 79.  This is also the value used if you try to set it to anything that is not a[39;49m[0m[0m
+[0m     valid value.  Typing just cols will print the current value.                             [39;49m[0m[0m
+[0m[39;49m[0m[0m
+[0m[1mExamples[39;49m[0m[39;49m[0m[0m
+[0m     options terminal cols                                                                         [39;49m[0m[0m
+[0m     options terminal cols=132                                                                     [39;49m[0m[0m
+[0m     options terminal cols=165                                                                     [39;49m[0m[0m
+[0m     options terminal cols=79                                                                      [39;49m[0m[0m
+[0m[39;49m[0m[0m
+[0m[1mSee also[39;49m[0m[39;49m[0m[0m
+[0m     rows, term, colour, options                                                                   [39;49m[0m[0m
+[0m[39;49m[0m[0m
+[38;5;213m#config[0m
+[0m########################################## CONFIGURATIONS ##########################################[0m
+[0m[AUTO TAB      ] [    5000] Scroll back buffer lines used for tab completion[0m
+[0m[BUFFER SIZE   ] [   20000] The size of the scroll back buffer[0m
+[0m[CHARSET       ] [   UTF-8] The character set encoding used by TinTin++[0m
+[0m[COLOR MODE    ] [    ANSI] The color code encoding used by TinTin++[0m
+[0m[COLOR PATCH   ] [      ON] TinTin++ will properly color the start of each line[0m
+[0m[COMMAND COLOR ] [   <fcf>] The color of echoed commands[0m
+[0m[COMMAND ECHO  ] [      ON] Your commands are echoed in split mode[0m
+[0m[CONNECT RETRY ] [       0] Seconds TinTin++ sessions try to connect on failure[0m
+[0m[HISTORY SIZE  ] [    1000] The size of the command history[0m
+[0m[LOG           ] [     RAW] The data format of the log files[0m
+[0m[MCCP          ] [      ON] MCCP is enabled.[0m
+[0m[MOUSE TRACKING] [     OFF] Your terminal does not generate mouse events.[0m
+[0m[PACKET PATCH  ] [       5] Seconds TinTin++ will try to patch broken packets[0m
+[0m[RANDOM SEED   ] [    AUTO] Seed value used for the random number engine[0m
+[0m[REPEAT ENTER  ] [     OFF] You send a carriage return on an enter[0m
+[0m[REPEAT CHAR   ] [       !] The character used for repeating commands[0m
+[0m[SCREEN READER ] [     OFF] You are not using a screen reader[0m
+[0m[SCROLL LOCK   ] [      ON] You do not see mud output while scrolling[0m
+[0m[SPEEDWALK     ] [     OFF] Your input is not scanned for speedwalk directions[0m
+[0m[TINTIN CHAR   ] [       #] The character used for TinTin++ commands[0m
+[0m[VERBATIM      ] [     OFF] Your keyboard input is parsed by TinTin++[0m
+[0m[VERBATIM CHAR ] [       \] The character used for unparsed text[0m
+[0m[VERBOSE       ] [     OFF] Messages while reading in a script file are gagged[0m
+[0m[WORDWRAP      ] [     OFF] Mud output is line wrapped[0m
+[0m####################################################################################################[0m
+[38;5;213mconfig wordwrap on[0m
+[0mTry something else.[0m
+[38;5;213m#config workdwrap on[0m
+[0m#ERROR: #CONFIG {WORKDWRAP} IS NOT A VALID OPTION.[0m
+[38;5;213m#config wordwrap on[0m
+[0m#CONFIG {WORDWRAP} HAS BEEN SET TO {ON}.[0m
+[38;5;213mrst[0m
+[0mTry something else.[0m
+[0m[0m
+[0mRows changed from 300 to 300.[39;49m[0m[0m
+[0m[0m
+[0mColumns changed from 99 to 99.[39;49m[0m[0m
+[38;5;213ml[0m
+[0m[High Altar of Sek][39;49m[0m[0m
+[0mThis central part of Sek's temple is the site of the High Altar, a flat slab of mostly black stone[39;49m[0m[0m
+[0mat the base of a shallow depression.  To the south is the huge statue of Sek himself and to the[39;49m[0m[0m
+[0mnorth is the relative safety of the entrance hall.  There is an iron door in the bare stone of the[39;49m[0m[0m
+[0mwest wall.[39;49m[0m[0m
+[0m[32mThere are three obvious exits: north, south and west.[39;49m[0m[39;49m[0m[0m
+[38;5;213mcols 999[0m
+[0mColumns changed from 99 to 999.[39;49m[0m[0m
+[38;5;213ml[0m
+[0m[High Altar of Sek][39;49m[0m[0m
+[0m[38;5;208mThis central part of Sek's temple is the site of the High Altar, a flat slab of mostly black stone
+at the base[0m[0m of a shallow depression.  To the south is the huge statue of Sek himself and to the
+north is the relative safety of the entrance hall.  There is an iron door in the bare stone of the
+west wall.[39;49m[0m[0m
+[0m[32mThere are three obvious exits: north, south and west.[39;49m[0m[39;49m[0m[0m
+[38;5;213mpray[0m
+[0mYou prostrate yourself on the ground and speak at some length to Seven-Handed Sek.[39;49m[0m[0m
+[0mYou find yourself slightly distracted from your prayers.[39;49m[0m[0m
+[0m(+[1;36;49m5,526[0;39;49mxp)[0m
+[38;5;213m#SHOWME $current_time[0m
+[0m$current_time[0m
+[0m(One) Yase's wispy voice comes from the golden lemur, saying: only 2 royals this time :([39;49m[0m[39;49m[0m[0m
+[0mKess of Sek and a small translucent cloud arrive from the north.[39;49m[0m[0m
+[0mKess of Sek recites a prayer.[39;49m[0m[0m
+[0mKess of Sek calls upon Sek for protection.[39;49m[0m[0m
+[0m[36mKess of Sek smiles viciously.[39;49m[0m[39;49m[0m[0m
+[0m[39;49m[0m[0m[0m[36mKess of Sek smiles viciously.[39;49m[0m[39;49m[0m[0m
+[0m[39;49m[0mKess of Sek opens the iron door.[39;49m[0m[0m
+[0mKess of Sek leaves west.[39;49m[0m[0m
+[0mThe door swings shut in the small translucent cloud's face.[39;49m[0m[0m
+[0mThe small translucent cloud dissipates into nothingness.[39;49m[0m[0m
+[0mKess of Sek opens the iron door.[39;49m[0m[0m
+[0mKess of Sek and a small translucent cloud arrive from the west.[39;49m[0m[0m
+[0mKess of Sek closes the iron door.[39;49m[0m[0m
+[38;5;213m[0m
+[38;5;213mpray[0m
+[0mYou prostrate yourself on the ground and speak at some length to Seven-Handed Sek.[39;49m[0m[0m
+[0mYou find yourself slightly distracted from your prayers.[39;49m[0m[0m
+[0m(+[1;36;49m6,861[0;39;49mxp)[0m
+[0m[0m
+[0mKess of Sek recites a prayer.[39;49m[0m[0m
+[0mKess of Sek calls upon Sek for protection.[39;49m[0m[0m
+[0mKess of Sek and the small translucent cloud leave north.[39;49m[0m[0m
+[38;5;213m[0m
+[38;5;213m#system date[0m
+[0m#OK: EXECUTING 'date'[0m
+[38;5;213mquit[0m
+[0mA small gecko takes your hand and rushes you to the departure lounge.[39;49m[0m[0m
+[0mGreco the Departure Gecko starts inspecting all your items and scribbling on a notepad.[39;49m[0m[0m
+[0m[0m
+[0mGreco the Departure Gecko smiles brightly.[39;49m[0m[0m
+[0m[39;49m[0m[36mGreco the Departure Gecko exclaims: Well, everything seems to be in order.  Bye bye![39;49m[0m[39;49m[0m[0m
+[0m#SESSION 'discworld' DIED.[0m
