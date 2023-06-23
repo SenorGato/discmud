@@ -31,7 +31,7 @@
 #ALIAS {con} {consider all;};
 #ALIAS {lic} {look in corpse;}
 #ALIAS {lip} {open pk; look in pk;}
-#ALIAS {calm} {sheathe Lightsabre;}
+#ALIAS {calm} {sheathe Lightsabre;bead;}
 #ALIAS {go} {draw Lightsabre;}
 #ALIAS {bead} {sheathe fang in sapphire-studded sword belt;hold beads in right hand;}
 #ALIAS {fang} {unhold beads; draw fang into my right hand;}
