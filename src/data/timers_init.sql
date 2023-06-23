@@ -1,7 +1,5 @@
 --Discworld Mud Timer Database Provisioning
 
---Create Is_Active view
-
 CREATE SCHEMA IF NOT EXISTS discmud;
 ALTER SCHEMA discmud OWNER TO discmud;
 GRANT ALL PRIVILEGES ON DATABASE discmud to discmud;
