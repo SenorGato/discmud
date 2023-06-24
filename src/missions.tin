@@ -8,11 +8,14 @@
 #CLASS {missions} {kill};
 #CLASS {missions} {open};
 
+#FUNCTION start_mission {#SYSTEM PGPASSWORD=quowgomoo psql -U discmud -d discmud -c "INSERT INTO timers (mission_name) VALUES (%1)" >/dev/null}
+#FUNCTION update_mission {#SYSTEM PGPASSWORD=quowgomoo psql -U discmud -d discmud -c "SELECT update_mission(%1)" >/dev/null}
+
 #HIGHLIGHT {You have been awarded %1 experience points for delivering this letter.} {light orange};
 #HIGHLIGHT {Frank says to you in Morporkian with a Morporkian accent: Very well, Asami} {light orange};
 
-#ACTION {Frank says to you in Morporkian with a Morporkian accent: Very well, Asami} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -c "INSERT INTO timers (mission_name) VALUES ('$dl_mission');"}};
-#ACTION {You have been awarded %1 experience points for delivering this letter.} {#system {PGPASSWORD="quowgomoo" psql -U discmud -d discmud -v mission_name=$dl_mission -v xp=%1 -f /home/senoraraton/bins/discmud/src/data/timer_complete.sql}};
+#ACTION {Frank says to you in Morporkian with a Morporkian accent: Very well, Asami} {@start_mission{'$dl_mission'}};
+#ACTION {You have been awarded %1 experience points for delivering this letter.} {@update_mission{%1, 'dl'}};
 
 
 
