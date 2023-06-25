@@ -6,3 +6,4 @@ BEGIN
     WHERE mission_name LIKE (mission_completed || '%') AND xp IS NULL;
 END;
 $$ LANGUAGE plpgsql;
+

@@ -1,0 +1,7 @@
+Ingest_Timers Table
+Trigger when completed_on TRUE
+Move to timers table
+Calculate timer compleition time from Mission type + Constants table
+Constants table holds mission type cooldowns
+We need a function when the timer_completion_time has expried
+Move to cold storage
