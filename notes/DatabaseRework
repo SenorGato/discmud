@@ -1,7 +1,20 @@
 Ingest_Timers Table
 Trigger when completed_on TRUE
 Move to timers table
-Calculate timer compleition time from Mission type + Constants table
+Calculate timer completion time from Mission type + Constants table
 Constants table holds mission type cooldowns
 We need a function when the timer_completion_time has expried
 Move to cold storage
+
+Ingest <- Name/Started-on/Completed-on/xp/money
+Missions <- Ingest
+Timers <- Ingest Name/Background Worker
+Constants <- Job Definitions
+
+We are going to lifecycle hook onto row updates for completed_on so that 
+when completed_on is defined it:
+migrates the row to missions table
+instantiates timer on timers table
+
+Write background worker to create new timer row with auto explosion
+
