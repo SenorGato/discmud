@@ -13,10 +13,26 @@
 
 #HIGHLIGHT {You have been awarded %1 experience points for delivering this letter.} {light orange};
 #HIGHLIGHT {Frank says to you in Morporkian with a Morporkian accent: Very well, Asami} {light orange};
+#HIGHLIGHT {You have four hours to deliver %d fresh %w sausages to Sam Slager.} {light red}
+#HIGHLIGHT {You have four hours to deliver %d fresh %w %w sausages to Sam Slager.} {light orange}
 
 #ACTION {Frank says to you in Morporkian with a Morporkian accent: Very well, Asami} {@start_mission{'$dl_mission'}};
 #ACTION {You have been awarded %1 experience points for delivering this letter.} {@update_mission{%1, 'dl'}};
 
+#ACTION {You have four hours to deliver %d fresh %w sausages to Sam Slager.} {@start_mission{'ssa'}};
+#ACTION {You have four hours to deliver %d fresh %w %w sausages to Sam Slager.} {@start_mission{'ssb'}};
+#ACTION {Sam Slager says to you in Morporkian with a Morporkian accent: I'll have to take care of this one later.} {@update_mission{0,'ss'}};
+#ACTION {^You have been awarded %1 experience points for completing this order.} {@update_mission{%1, 'ss'}};
+
+#ACTION {Hatayagainoro gives a chit to you.} {@start_mission{'agt'}};
+#ACTION {You have been awarded %1 experience points.  There may also be a little gift for you} {@update_mission{%1, 'agt'}};
+
+#ALIAS {jm} {
+    #REGEXP {$GMPC[room][info][identifier]} {a5846b0acd26afec87c2dc20daa7ccadecc94cff}
+        {jm_check %1}
+        {perform divine hand on job_market;calm;speak morporkian;enter flame;jm_check %1;}
+};
+#ALIAS {jm_check} {#if {"%0" == ""} {read board;};#else {apply for } }
 
 
 #ALIAS {dl} {
@@ -28,5 +44,6 @@
 
 #ALIAS {deci} {decipher handwriting on letter;}
 #ALIAS {inq} {inquire after addressee;}
+#ALIAS {oyster} {get corpses from pk;get all from corpses;put pearls in pk;put corpses on workbench;}
 
 #CLASS {missions} {close};
