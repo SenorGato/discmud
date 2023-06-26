@@ -15,54 +15,41 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
+CREATE OR REPLACE FUNCTION create_timer()
+RETURNS TRIGGER AS $$
+BEGIN
+    IF NEW.completed_on IS NOT NULL AND OLD.completed_on IS NULL AND NEW.xp > 0 THEN
+        INSERT INTO timers (mission_name, end_time)
+        VALUES (NEW.mission_name, NEW.completed_on + INTERVAL '60 minutes');
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+
+
+CREATE TRIGGER mission_completed_trigger
+AFTER UPDATE OF completed_on ON missions
+FOR EACH ROW
+WHEN (NEW.completed_on IS NOT NULL AND OLD.completed_on IS NULL AND NEW.xp > 0)
+EXECUTE FUNCTION create_timer(NEW.mission_name, NEW.completed_on);
+
+--Timer Worker Functions
 CREATE OR REPLACE FUNCTION fetch_timers() 
   RETURNS TABLE (mission_name text, end_time TIMESTAMPTZ) AS
 $$
 DECLARE
   current_time TIMESTAMPTZ := NOW();
 BEGIN
+  DELETE FROM timers
+  WHERE end_time <= current_time;
+
   RETURN QUERY
-    WITH deleted_rows AS (
-      DELETE FROM timers
-      WHERE end_time <= current_time
-      RETURNING mission_name, end_time
-    )
     SELECT mission_name, end_time
-    FROM timers
-    WHERE NOT EXISTS (
-      SELECT 1
-      FROM deleted_rows
-      WHERE timers.mission_name = deleted_rows.mission_name
-        AND timers.end_time = deleted_rows.end_time
-    );
+    FROM timers;
 END;
 $$
 LANGUAGE plpgsql;
-
-
-CREATE TRIGGER mission_completed_trigger
-AFTER UPDATE OF completed_on ON missions
-FOR EACH ROW
-WHEN (NEW.completed_on IS NOT NULL AND OLD.completed_on IS NULL)
-EXECUTE FUNCTION create_timer(NEW.mission_name, NEW.completed_on);
-
---Timer Worker Functions
-CREATE OR REPLACE FUNCTION delete_expired_timers() RETURNS VOID AS $$
-BEGIN
-    DELETE FROM timers
-    WHERE end_time <= NOW();
-END;
-$$ LANGUAGE plpgsql;
-
-CREATE OR REPLACE FUNCTION timer_cleanup_worker() RETURNS VOID AS $$
-BEGIN
-    LOOP
-        PERFORM delete_expired_timers();
-
-        PERFORM pg_sleep(5);  --In seconds 
-    END LOOP;
-END;
-$$ LANGUAGE plpgsql;
 
 --Misc Table Functions
 CREATE FUNCTION truncate_completed_on() RETURNS TRIGGER AS $$
