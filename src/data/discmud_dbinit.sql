@@ -5,5 +5,7 @@ SET search_path TO discmud;
 REVOKE ALL ON SCHEMA discmud FROM public;
 REVOKE ALL ON DATABASE discmud FROM public;
 
-\i timers_table_init.sql
-\i timer_functions.sql
+\i discmud_domains.sql
+\i discmud_table_init.sql
+\i discmud_functions.sql
+SELECT pg_start_background_worker('timer_cleanup_worker');
