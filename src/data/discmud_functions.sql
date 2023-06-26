@@ -52,15 +52,15 @@ $$
 LANGUAGE plpgsql;
 
 --Misc Table Functions
-CREATE FUNCTION truncate_completed_on() RETURNS TRIGGER AS $$
+CREATE OR REPLACE FUNCTION truncate_completed_on() RETURNS TRIGGER AS $$
 BEGIN
     NEW.completed_on := date_trunc('second', NEW.completed_on);
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE TRIGGER truncate_completed_on_trigger
-BEFORE INSERT OR UPDATE ON timers
+CREATE OR REPLACE TRIGGER truncate_completed_on_trigger
+BEFORE INSERT OR UPDATE ON missions
 FOR EACH ROW
     WHEN (NEW.completed_on IS NOT NULL)
         EXECUTE FUNCTION truncate_completed_on();

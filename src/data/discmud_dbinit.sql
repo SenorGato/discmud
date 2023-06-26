@@ -8,4 +8,3 @@ REVOKE ALL ON DATABASE discmud FROM public;
 \i discmud_domains.sql
 \i discmud_table_init.sql
 \i discmud_functions.sql
-SELECT pg_start_background_worker('timer_cleanup_worker');
