@@ -15,13 +15,11 @@ BEGIN
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION create_timer()
+CREATE OR REPLACE FUNCTION create_timer(mission_name text, completed_on TIMESTAMPTZ)
 RETURNS TRIGGER AS $$
 BEGIN
-    IF NEW.completed_on IS NOT NULL AND OLD.completed_on IS NULL AND NEW.xp > 0 THEN
-        INSERT INTO timers (mission_name, end_time)
-        VALUES (NEW.mission_name, NEW.completed_on + INTERVAL '60 minutes');
-    END IF;
+    INSERT INTO timers (mission_name, end_time)
+    VALUES (mission_name, completed_on + INTERVAL '60 minutes');
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
