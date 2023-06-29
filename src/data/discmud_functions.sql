@@ -8,13 +8,6 @@ END;
 $$ LANGUAGE plpgsql;
 
 --Timer Creation Functions
-CREATE OR REPLACE FUNCTION create_timer(mission_name text, completed_on TIMESTAMPTZ) RETURNS void AS $$
-BEGIN
-    INSERT INTO discmud.timers (mission_name, done_time)
-    VALUES (mission_name, completed_on + INTERVAL '60 minutes');
-END;
-$$ LANGUAGE plpgsql;
-
 CREATE OR REPLACE FUNCTION create_timer()
 RETURNS TRIGGER AS $$
 BEGIN
