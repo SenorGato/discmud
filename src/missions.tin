@@ -8,8 +8,8 @@
 #CLASS {missions} {kill};
 #CLASS {missions} {open};
 
-#FUNCTION start_mission {#SYSTEM PGPASSWORD=quowgomoo psql -U discmud -d discmud -c "INSERT INTO ingress (mission_name) VALUES (%1)" >/dev/null}
-#FUNCTION end_mission {#SYSTEM PGPASSWORD=quowgomoo psql -U discmud -d discmud -c "SELECT end_mission(%1)" >/dev/null}
+#FUNCTION start_mission {#SYSTEM PGPASSWORD=quowgomoo psql -U discmud -d discmud -c "INSERT INTO missions (mission_name) VALUES (%1)" }
+#FUNCTION end_mission {#SYSTEM PGPASSWORD=quowgomoo psql -U discmud -d discmud -c "SELECT end_mission(%1)" }
 #FUNCTION seppuku {}
 
 #HIGHLIGHT {You have been awarded %1 experience points for delivering this letter.} {light orange};

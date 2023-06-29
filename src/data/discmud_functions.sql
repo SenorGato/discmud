@@ -1,6 +1,6 @@
 CREATE OR REPLACE FUNCTION end_mission(xp_value integer, mission_completed text) RETURNS void AS $$
 BEGIN
-    UPDATE missions
+    UPDATE discmud.missions
     SET xp = CASE WHEN id = (SELECT MAX(id) FROM missions WHERE mission_name LIKE (mission_completed || '%') ) THEN xp_value ELSE 0 END,
         completed_on = NOW()
     WHERE mission_name LIKE (mission_completed || '%') AND xp IS NULL;
@@ -10,41 +10,39 @@ $$ LANGUAGE plpgsql;
 --Timer Creation Functions
 CREATE OR REPLACE FUNCTION create_timer(mission_name text, completed_on TIMESTAMPTZ) RETURNS void AS $$
 BEGIN
-    INSERT INTO timers (mission_name, end_time)
+    INSERT INTO discmud.timers (mission_name, done_time)
     VALUES (mission_name, completed_on + INTERVAL '60 minutes');
 END;
 $$ LANGUAGE plpgsql;
 
-CREATE OR REPLACE FUNCTION create_timer(mission_name text, completed_on TIMESTAMPTZ)
+CREATE OR REPLACE FUNCTION create_timer()
 RETURNS TRIGGER AS $$
 BEGIN
-    INSERT INTO timers (mission_name, end_time)
-    VALUES (mission_name, completed_on + INTERVAL '60 minutes');
+    INSERT INTO discmud.timers (mission_name, done_time)
+    VALUES (NEW.mission_name, NEW.completed_on + INTERVAL '60 minutes');
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
 
-
-
 CREATE TRIGGER mission_completed_trigger
-AFTER UPDATE OF completed_on ON missions
+AFTER UPDATE OF completed_on ON discmud.missions
 FOR EACH ROW
 WHEN (NEW.completed_on IS NOT NULL AND OLD.completed_on IS NULL AND NEW.xp > 0)
-EXECUTE FUNCTION create_timer(NEW.mission_name, NEW.completed_on);
+EXECUTE FUNCTION create_timer();
 
 --Timer Worker Functions
 CREATE OR REPLACE FUNCTION fetch_timers() 
-  RETURNS TABLE (mission_name text, end_time TIMESTAMPTZ) AS
+  RETURNS TABLE (mission_name text, done_time TIMESTAMPTZ) AS
 $$
 DECLARE
   current_time TIMESTAMPTZ := NOW();
 BEGIN
-  DELETE FROM timers
-  WHERE end_time <= current_time;
+  DELETE FROM discmud.timers
+  WHERE timers.done_time <= current_time;
 
   RETURN QUERY
-    SELECT mission_name, end_time
-    FROM timers;
+    SELECT timers.mission_name, timers.done_time
+    FROM discmud.timers;
 END;
 $$
 LANGUAGE plpgsql;

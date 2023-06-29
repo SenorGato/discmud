@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-
-psql -U postgres -c "SELECT * FROM discmud.active_timers;"
+watch -n 1 'PGPASSWORD=quowgomoo psql -U discmud -d discmud -c "SELECT fetch_timers();"'

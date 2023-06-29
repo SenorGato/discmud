@@ -10,6 +10,6 @@ CREATE TABLE IF NOT EXISTS missions (
 );
 
 CREATE TABLE IF NOT EXISTS timers (
-  mission_type mission_tag PRIMARY KEY,
-  end_time TIMESTAMP NOT NULL
+  mission_name mission_tag PRIMARY KEY,
+  done_time TIMESTAMPTZ NOT NULL
 );
