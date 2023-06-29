@@ -25,13 +25,13 @@ EXECUTE FUNCTION create_timer();
 
 --Timer Worker Functions
 CREATE OR REPLACE FUNCTION fetch_timers() 
-  RETURNS TABLE (mission_name text, done_time TIMESTAMPTZ) AS
+  RETURNS TABLE (mission_name mission_tag, done_time TIMESTAMPTZ) AS
 $$
 DECLARE
-  current_time TIMESTAMPTZ := NOW();
+  cur_time TIMESTAMPTZ := NOW();
 BEGIN
   DELETE FROM discmud.timers
-  WHERE timers.done_time <= current_time;
+  WHERE timers.done_time <= cur_time;
 
   RETURN QUERY
     SELECT timers.mission_name, timers.done_time
