@@ -14,9 +14,9 @@ tmux split-window -v -l 8 -c ~/bins/discmud/bin ./mdt
 tmux select-pane -t 3
 tmux split-window -v -b -l 8 -c ~/bins/discmud/bin ./chat_plugin
 tmux select-pane -t 4
-tmux split-window -h -l 28 -c ~/bins/discmud/notes/ nvim notes
+#tmux split-window -h -l 28 -c ~/bins/discmud/notes/ nvim notes
 tmux select-pane -t 4
-tmux send-keys "tt++ -G main.tin" Enter
+tmux send-keys "tt++ -G asami.tin" Enter
 ##tmux split-window -v -l 30 
 
 #tmux split-window -v -b -l 8

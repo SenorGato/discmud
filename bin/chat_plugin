@@ -1,1 +1,1 @@
-while true; do clear; tail -n 8 ../logs/chat.log; sleep .1; done
+watch -ctn 0.4 'clear;cat ../logs/chat.log | tail -n 7'

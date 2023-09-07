@@ -2,4 +2,4 @@
 logs/
 right_prompt.log
 left_prompt.log
-stat_dump
+statdump

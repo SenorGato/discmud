@@ -40,21 +40,21 @@
     #VAR GMCP[oldvitals] {$GMCP[vitals]};
     #VAR GMCP[vitals] {%0};
     #SYSTEM {truncate -s 0 $prompt_file};
-    #LINE {log} {$prompt_file} {$GMCP[vitals] }
+    #LINE {log} {$prompt_file} {$GMCP[vitals] };
 
     #math {hploss} {$GMCP[vitals][hp] - $GMCP[oldvitals][hp]};
     #if {$hploss < -150} {
         #format {hp_loss_display} {<139>HP IS FALLING! CAREFUL! (Lost %s HP)<099>} {$hploss};
         #echo {$hp_loss_display};
         #showme {\a\a};
-    }
+    };
 
     #math {xpgain} {$GMCP[vitals][xp] - $GMCP[oldvitals][xp]};
     #if {$xpgain > 5000} {
         #format {xp_gain_display} {(+<169>%g<099>xp)} {$xpgain};
 
         #echo {$xp_gain_display};
-    }
+    };
 
     #NOP update_prompt;
 }

@@ -8,4 +8,3 @@ tac "$filename" | while IFS= read -r line; do
     fi
     echo "$line"
 done
-

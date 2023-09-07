@@ -1,0 +1,6 @@
+Instead of trying to maintain state.  Lets just call the purge function on every write.
+It currently purges stale jobs, but we can write more complex logic
+Inlcuding different times for different jobs and... job types.
+So there should never in the database be a case where there are 2 unfinished jobs of the same type.
+Then when we reference the element in t he table we don't have to do it by it
+We instead do it by job type && NULL because there should only ever be one field meeting those critera.

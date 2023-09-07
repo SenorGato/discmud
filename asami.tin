@@ -1,17 +1,16 @@
-#VARIABLE {chat_file} {logs/chat.log}
-#VARIABLE {prompt_file} {logs/prompt.log}
+#VARIABLE {chat_file} {./logs/chat.log}
+#VARIABLE {prompt_file} {./logs/prompt.log}
 
 #CONFIG {SPEEDWALK} {OFF};
-#CONFIG {SPLIT};
 #CONFIG {PACKET PATCH} {5};
 #CONFIG {COLOR PATCH} {ON};
 #CONFIG {MCCP} {ON};
 #CONFIG {LOG} {RAW};
-#CONFIG {BUFFER SIZE} {2000000};
+#CONFIG {BUFFER SIZE} {10000};
 #CONFIG {COMMAND COLOR} {<fcf>}; 
 #CONFIG {WORDWRAP} {ON};
 #CONFIG {COMMAND ECHO} {OFF};
-#NOP#CONFIG {DEBUG TELNET} {ON};
+/*#CONFIG {DEBUG TELNET} {ON};*/
 
 #SPLIT 0 0
 
@@ -28,8 +27,7 @@
 #SESSION {discworld} {discworld.starturtle.net} {4242};
 
 #FORMAT {log_file} {logs/asami/%t.log} {%Y-%m-%d};
+#LOG {TIMESTAMP} {%H:%M:%S }
 #LOG {APPEND} {$log_file};
 
 #ACTION {Greco the Departure Gecko waves.} {#end};
-
-#FORMAT {start_time} {%T};
