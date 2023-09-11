@@ -17,4 +17,3 @@ migrates the row to missions table
 instantiates timer on timers table
 
 Write background worker to create new timer row with auto explosion
-

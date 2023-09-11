@@ -1,0 +1,12 @@
+Commands:  
+Ambush 60 co.it.weap
+conceal 60 co.hi.obj
+unconceal 
+disable 60 co.it.tr 
+bandage 25 cr.med.fir
+Bob 15 fi.sp.unarmed & fi.un.gr
+Kick 15 fi.sp.un
+Punch 15 fi.sp.un
+Shove 15 fi.sp.un
+Trip 15 fi.sp.un
+Charge 20 fi.sp.mou

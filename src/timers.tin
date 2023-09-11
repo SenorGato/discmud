@@ -1,6 +1,0 @@
-#CLASS {timers} {kill};
-#CLASS {timers} {open};
-
-#ALIAS {test_db}{#system {psql -U postgres -c "INSERT INTO discmud.timers (mission_name) VALUES ('dlb');" > /dev/null}};
-
-#CLASS {actions} {close};

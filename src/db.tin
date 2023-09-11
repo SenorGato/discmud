@@ -334,7 +334,7 @@
 #ALIAS {db route %1} {
     #if {&last_query_list[%1]} {
         #var {target_room} {$last_query_list[%1]};
-        #format {route_display} {%c[speedwalk] Generating speedwalk from current location to %c%s%c, %c%s%c...} {bold blue}{green}{$target_room[room_short]}{bold blue}{orange}{$target_room[map_name]}{bold blue};
+        #format {route_display} {%c[speedwalk] Generating speedwalk from current location to %c%s%c, %c%s%c...} {bold cyan}{green}{$target_room[room_short]}{bold blue}{orange}{$target_room[map_name]}{bold blue};
         
         #echo {$route_display};
 
@@ -357,7 +357,7 @@
         #list {route_length} {create} {$route_length};
         #list {route_length} {size} {route_length};
 
-        #format {route_confirm} {%c[speedwalk] A route was found, type "%cspeedwalk%c" to fast travel. [%g steps]} {bold blue}{green}{bold blue}{$route_length};
+        #format {route_confirm} {%c[speedwalk] A route was found. %c [%g steps]} {bold cyan}{green}{$route_length};
         #echo {$route_confirm};
     } {
         #format {route_display} {%c[speedwalk] No previous query data found, try searching first.} {bold blue};

@@ -1,16 +1,10 @@
 #NOP Workspace:
-#ALIAS {dumpstats} {
-        #var dump 0;
-        #WHILE {"$dump" == "0"} {
-            #log overwrite statsheet.log; 
-            #var dump 1;
-        };
-};
+#ALIAS {dumpstats} {#log overwrite statdump; skills raw;}
 
 #ALIAS {ka} {kill every wealthy woman & every child & every sailor & every farmer & every scribe & every trader & every dealer & every bearded man & every old woman & every old man & every architect & every mason & every crippled man & every engineer & every merchant & every ambassador & every young man & every recruit & every labourer & every scruffy man & every vagabond & every tramp & every peasant & every madman & every young warrior & every wealthy man & mercenary &           }
 
 #VARIABLE {palming} {1}
-#ALIAS {setsize} {rows 300;cols 999};
+#ALIAS {setsize} {rows 300;cols 82};
 
 #ALIAS {^clear$} {#split {0} {0};setsize;};
 #ALIAS {^rst$} {#read {asami.tin};setsize;};
@@ -32,9 +26,10 @@
 #ALIAS {cn} {consider all;};
 #ALIAS {lic} {look in corpse;}
 #ALIAS {lip} {open pk; look in pk;}
-#ALIAS {calm} {sheathe Lightsabre;bead;}
+#ALIAS {calm} {sheathe Lightsabre in sword belt;bead;}
 #ALIAS {go} {draw Lightsabre;}
-#ALIAS {bead} {sheathe fang in sapphire-studded sword belt;hold beads in right hand;}
+#ALIAS {gohard} {go;fang;}
+#ALIAS {bead} {sheathe fang in sword belt;hold beads in right hand;}
 #ALIAS {fang} {unhold beads; draw fang into my right hand;}
 #ALIAS {loc} {locate identified things;}
 #ALIAS {sr} {RuhsSpeedRun;}
@@ -72,7 +67,7 @@
 };
 
 /*COMMANDS*/
-#ALIAS {ia} {sheathe kodachi; iai %1;}
+#ALIAS {ia} {sheathe kodachi; iai %1 with sword;}
 
 /*RITUALS*/
 
@@ -163,8 +158,12 @@
 
 /*CRAFTS*/
 
-#ALIAS {mend} {unwear %1; get needle from dress; sheathe kodachi; hold needle; get spool from dress; thread needle from spool; sew %1 with needle; put needle in dress; put spool in dress; wear %1; }
-
+#ALIAS {mend} {remove %1; get needle from dress; sheathe weapons; hold needle; get spool from dress; thread needle from spool; sew %1 with needle; put needle in dress; put spool in dress; wear %1; }
+#ALIAS {pott} {unhold held things; throw clay onto wheel; mould clay into %1 on wheel; get %1 from wheel; palm pot_brush from pk;hold pot_brush; stain %1 with a %2 pattern in %3; stain %1 with a %2 pattern in %3; stain %1 with a %2 pattern in %3; glaze %1 with %4 %5 glaze; put %1 in rack; }
+#ALIAS {skiln} {gpott; fire %1 in kiln;}
+#ALIAS {ckiln} {check pottery in kiln;}
+#ALIAS {fkiln} {get tongs; hold tongs; get %1 from kiln; put %1 in rack;}
+#ALIAS {gpott} {get %1 from rack; }
 /*MONEY*/
 #ALIAS {rateall} {rate coins as agatean;}
 #ALIAS {ratesep} {rate ephebe coins as bp; rate djb coins as bp; rate lancre coins as bp; rate genua coins as bp; rate am coins as bp }
@@ -174,22 +173,30 @@
 
 /*IDLE*/
 
-#ALIAS {idl} {speak djelian; rawr; nyan; neko; sh;pray;hskills} 
-#ALIAS {rawr} {get yellow book from dress; open yellow book to page 3; read yellow book; turn page in yellow book; read yellow book; turn page in yellow book; read yellow book; close yellow book; put yellow book into dress;};
-#ALIAS {uwu} {get growler from pk; tug cord on growler; put growler into pk}
-#ALIAS {nyan} {get tm_pearl from pk; value tm_pearl;value tm_pearl in lancre;value tm_pearl in lancre;value tm_pearl in lancre; value tm_pearl in lancre; put tm_pearl into pk;} 
-#ALIAS {neko} {value octiron charm bracelet; value octiron charm bracelet;value octiron charm bracelet;value octiron charm bracelet in lancre;} 
-#ALIAS {yarn} {get rope from pk; }
-#ALIAS {poi} {get left_poi from pk; calm;wield left_poi; whirl poi in wall plane pattern; whirl poi in wall plane pattern;put left_poi in pk;}
-#ALIAS {yo} {get yoyo pk; attempt yoyo trick with yo-yo; put yoyo pk;}
-#ALIAS {senssu} {get fan from pk; sheathe kodachi; hold fan; snap fan; put fan in pk;}
+#ALIAS {idl} {idl_setup; mapo; yo; yo; yarn; uwu; uwu; nyan; neko; scratch; pray; idl_conclude; } 
+#ALIAS {idl2} {mapo; yo; yarn; uwu; nyan; neko; scratch; pray; idl_conclude; } 
+
+#ALIAS {idl_setup} {speak uberwaldean; calm; put all except worn things&held things in pk; }
+#ALIAS {idl_conclude} {put all except beads&money in pk; hskills; }
+#ALIAS {mapo} {palm tm_pen from pk; tap tm_pen; tap tm_pen; }
+#ALIAS {rawr} {get dictionary from dress; open dictionary book; put dictionary into dress;}
+#ALIAS {uwu} {get growler from pk; tug cord on growler;}
+#ALIAS {nyan} {get tm_pearl from pk; value tm_pearl;value tm_pearl in lancre; } 
+#ALIAS {neko} {value octiron charm bracelet; value octiron charm bracelet in lancre;} 
+#ALIAS {scratch} {get value_weapon from pk; value value_weapon; value value_weapon in lancre; }
+#ALIAS {yarn} {get rope from pk; tie rope; untie rope; }
+#ALIAS {spinny} {get left_poi from pk; get right_poi from pk; wield left_poi in left hand; whirl poi in wall plane pattern; hold beads in right hand; }
+#ALIAS {yo} {get yoyo from pk; attempt a rocking cradle trick with yo-yo;}
+#ALIAS {senssu} {get fan from pk; sheathe kodachi; hold fan; snap fan;}
+#ALIAS {idl_con} {consider covertly shearer; }
+#ALIAS {idl_rod} {get tm_rod from pk; hold tm_rod;}
 
 /*MISC*/
 
-#ALIAS {sellrats} {out; sw;sw;sw;n;get tools from pk; give tools to Noelle;s;ne;ne;ne;pm;enter shed;}
+#ALIAS {sellrats} {dhrat; out; sw;sw;sw;n;get tools from pk; give tools to Noelle;}
 #ALIAS {rchest} {open chest; get all from chest;put tool in pk;}
 #ALIAS {gapprepair} {unkeep %1;remove %1; put %1 on altar;keep %1;wear %1;look %1}
-#ALIAS {balbook} {palm balance book from dress;balance book;turn book to page 9; read book;slip balance book into dress;}
+#ALIAS {balbook} {palm balance book from pk;balance book;turn book to page 9; read book;slip balance book into pk;}
 #ALIAS {moo} {meditate on obsecration}
 
 /*MISSIONS*/
@@ -198,12 +205,13 @@
 #ALIAS {^sett$} {pry sett with shovel;gt sett;place sett;}
 
 /*Tang*/
-#ALIAS {haiku} {get brush & paint from pk; hold brush; open paint; compose message; close paint; put brush & paint in pk;}
+#ALIAS {haiku} {get brush & paint from pk; hold brush; open paint; compose message; look in paint; close paint; put brush & paint in pk;}
 #ALIAS {exercise} {divine a malign presence;summon divine powers;cleanse my spirit;exorcise spirit from this room;}
 
 /*Slager*/
 #ALIAS {saus} {put %1 on workbench;debone %1 on workbench;grind meats in grinder; extrude meats from extruder;e;give sausages to Sam;}
 #ALIAS {pkt} {gm; buy 6 %1; get all from packets;drop packets;bury packets;pm; }
+#ALIAS {panda} {db npc Woo Fist;db route 0;sr;go;search;attack panda;}
 
 #ALIAS {colourpalette}
 {
