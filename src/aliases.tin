@@ -182,7 +182,7 @@
 #ALIAS {rawr} {get dictionary from dress; open dictionary book; put dictionary into dress;}
 #ALIAS {uwu} {get growler from pk; tug cord on growler;}
 #ALIAS {nyan} {get tm_pearl from pk; value tm_pearl;value tm_pearl in lancre; } 
-#ALIAS {neko} {value octiron charm bracelet; value octiron charm bracelet in lancre;} 
+#ALIAS {neko} {get octiron charm bracelet from ; value octiron charm bracelet; value octiron charm bracelet in lancre;} 
 #ALIAS {scratch} {get value_weapon from pk; value value_weapon; value value_weapon in lancre; }
 #ALIAS {yarn} {get rope from pk; tie rope; untie rope; }
 #ALIAS {spinny} {get left_poi from pk; get right_poi from pk; wield left_poi in left hand; whirl poi in wall plane pattern; hold beads in right hand; }
